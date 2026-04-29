@@ -62,6 +62,7 @@ N_FRONTIER    = 60          # points on efficient frontier
 RESULTS_DIR   = "results"
 PAPER_VALUE   = 10_000.0    # starting paper-trade portfolio value
 VIX_THRESHOLD = 28.0        # fear-index threshold → min-variance mode
+BACKTEST_DAYS = 45
 
 SECTOR_COLORS = {
     "Fashion":    "#C084FC",
@@ -76,16 +77,23 @@ SECTOR_COLORS = {
 # ──────────────────────────────────────────────────────────────
 
 def fetch_all(window_days: int):
-    end   = datetime.today()
-    start = end - timedelta(days=window_days + 10)   # small buffer for weekends
+    end = datetime.today()
+    start = end - timedelta(days=window_days + BACKTEST_DAYS + 30)
 
     tickers = [v[0] for v in STOCKS.values()] + ["SPY", "^VIX"]
-    raw = yf.download(tickers, start=start.strftime("%Y-%m-%d"),
-                      end=end.strftime("%Y-%m-%d"),
-                      interval="1d", auto_adjust=True, progress=False)
+
+    raw = yf.download(
+        tickers,
+        start=start.strftime("%Y-%m-%d"),
+        end=end.strftime("%Y-%m-%d"),
+        interval="1d",
+        auto_adjust=True,
+        progress=False
+    )
 
     prices = raw["Close"] if isinstance(raw.columns, pd.MultiIndex) else raw
-    prices = prices.dropna(how="all").tail(window_days)
+    prices = prices.dropna(how="all")
+
     return prices
 
 # ──────────────────────────────────────────────────────────────
@@ -642,6 +650,111 @@ def save_report(path, run_date, weights_map, ann_return, ann_risk, sharpe,
 # ──────────────────────────────────────────────────────────────
 #  MAIN
 # ──────────────────────────────────────────────────────────────
+def run_historical_backtest(prices: pd.DataFrame):
+    """
+    Creates historical time-series files immediately:
+    1. paper_trading.csv = portfolio value vs SPY over time
+    2. weight_history.csv = daily stock allocation weights over time
+    3. paper_trading.png = value growth/shrink chart
+    4. weight_history.png = allocation changes over time
+    """
+
+    print("\n🔁 Running historical backtest to create time-series charts...")
+
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+
+    stock_tickers = [v[0] for v in STOCKS.values()]
+    available = [t for t in stock_tickers if t in prices.columns]
+
+    if len(available) < N_SELECT:
+        print("❌ Not enough tickers for backtest.")
+        return
+
+    clean_prices = prices[available + ["SPY"]].dropna(how="all")
+
+    if len(clean_prices) < WINDOW_DAYS + 5:
+        print("❌ Not enough price history for backtest.")
+        return
+
+    port_val = PAPER_VALUE
+    spy_val = PAPER_VALUE
+
+    paper_rows = []
+    weight_rows = []
+
+    start_i = max(WINDOW_DAYS, len(clean_prices) - BACKTEST_DAYS)
+
+    for i in range(start_i, len(clean_prices)):
+        current_date = clean_prices.index[i].strftime("%Y-%m-%d")
+
+        train_window = clean_prices.iloc[i - WINDOW_DAYS:i]
+        today_prices = clean_prices.iloc[i]
+        yesterday_prices = clean_prices.iloc[i - 1]
+
+        stock_window = train_window[available].dropna(how="all")
+        returns = stock_window.pct_change().dropna()
+
+        if len(returns) < 5:
+            continue
+
+        mu = returns.mean()
+        cov = returns.cov()
+
+        vix_slice = prices.loc[:clean_prices.index[i]]
+        vix_level = get_vix_level(vix_slice)
+        fear_mode = vix_level > VIX_THRESHOLD
+
+        ann_return, ann_risk, weights_arr, sharpe = milp_optimize(
+            mu, cov, MIN_WEIGHT, MAX_WEIGHT, N_SELECT, fear_mode=fear_mode
+        )
+
+        daily_rets = (today_prices[available] / yesterday_prices[available]) - 1
+        w_map = {tkr: w for tkr, w in zip(available, weights_arr)}
+
+        port_daily = sum(w_map.get(t, 0) * daily_rets.get(t, 0) for t in available)
+        port_val *= (1 + port_daily)
+
+        if "SPY" in clean_prices.columns:
+            spy_daily = (today_prices["SPY"] / yesterday_prices["SPY"]) - 1
+            spy_val *= (1 + spy_daily)
+
+        paper_rows.append({
+            "date": current_date,
+            "portfolio_value": round(port_val, 2),
+            "spy_value": round(spy_val, 2),
+            "daily_return": round(float(port_daily), 6)
+        })
+
+        weight_row = {
+            "date": current_date,
+            "ann_return": round(ann_return, 6),
+            "ann_risk": round(ann_risk, 6),
+            "sharpe": round(sharpe, 4)
+        }
+
+        name_list = [nm for nm in STOCKS if STOCKS[nm][0] in available]
+
+        for nm, w in zip(name_list, weights_arr):
+            weight_row[nm] = round(float(w), 6)
+
+        weight_rows.append(weight_row)
+
+    paper_df = pd.DataFrame(paper_rows)
+    weight_df = pd.DataFrame(weight_rows)
+
+    paper_path = f"{RESULTS_DIR}/paper_trading.csv"
+    weight_path = f"{RESULTS_DIR}/weight_history.csv"
+
+    paper_df.to_csv(paper_path, index=False)
+    weight_df.to_csv(weight_path, index=False)
+
+    print(f"  ✓ Backtest paper trading rows: {len(paper_df)}")
+    print(f"  ✓ Backtest weight history rows: {len(weight_df)}")
+
+    plot_paper_trading(paper_path, f"{RESULTS_DIR}/paper_trading.png")
+    plot_weight_history(weight_path, f"{RESULTS_DIR}/weight_history.png")
+
+    print("  ✓ Time-series charts created.")
 
 def main():
     run_date = datetime.today().strftime("%Y-%m-%d")
@@ -656,6 +769,11 @@ def main():
     # ── Fetch ─────────────────────────────────────────────────
     print("📥 Fetching market data (25 stocks + SPY + VIX)...")
     prices = fetch_all(WINDOW_DAYS)
+    paper = run_historical_backtest(prices)
+    return {
+    "portfolio_value": round(float(paper_df["portfolio_value"].iloc[-1]), 2),
+    "spy_value": round(float(paper_df["spy_value"].iloc[-1]), 2)
+}
 
     stock_tickers = [v[0] for v in STOCKS.values()]
     available     = [t for t in stock_tickers if t in prices.columns]
@@ -722,17 +840,6 @@ def main():
     spy_stats = compute_spy_comparison(prices)
     if spy_stats:
         print(f"\n📊 S&P 500 comparison: {spy_stats['annualized_ret']:.2%} ann. return | Sharpe {spy_stats['sharpe']:.3f}")
-
-    # ── Paper trading ─────────────────────────────────────────
-    paper_path = f"{RESULTS_DIR}/paper_trading.csv"
-    paper      = update_paper_trading(paper_path, run_date,
-                                      ann_return, weights_arr, available, prices)
-    print(f"\n💰 Paper trading — Portfolio: ${paper['portfolio_value']:,.2f}  |  SPY: ${paper['spy_value']:,.2f}")
-
-    # ── Persist weight history ────────────────────────────────
-    wh_path = f"{RESULTS_DIR}/weight_history.csv"
-    append_weight_history(wh_path, run_date, weights_map,
-                          ann_return, ann_risk, sharpe)
 
     # ── Save JSON summary ─────────────────────────────────────
     summary = {

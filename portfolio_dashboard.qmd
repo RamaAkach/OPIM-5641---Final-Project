@@ -1,0 +1,975 @@
+---
+title: "🎶 Coachella & Glamour Portfolio Optimizer"
+subtitle: "OPIM 5641 Final Project — Code Explanation, Results, and Automation"
+author: "Rama Akach"
+
+format:
+  html:
+    theme: darkly
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    embed-resources: true
+    page-layout: full
+    css: styles.css
+
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{python}
+import json
+import pandas as pd
+from pathlib import Path
+from IPython.display import Image, display
+
+results_path = Path("results/latest.json")
+
+if results_path.exists():
+    with open(results_path, "r") as f:
+        data = json.load(f)
+else:
+    data = {}
+
+allocation = data.get("allocation", {})
+spy = data.get("spy", {})
+paper = data.get("paper_trading", {})
+golden_cross = data.get("golden_cross", {})
+
+def pct(x):
+    try:
+        return f"{float(x) * 100:.2f}%"
+    except:
+        return "N/A"
+
+def money(x):
+    try:
+        return f"${float(x):,.2f}"
+    except:
+        return "N/A"
+
+def num(x):
+    try:
+        return round(float(x), 3)
+    except:
+        return "N/A"
+```
+
+# Project Overview
+
+This project builds a daily portfolio optimizer using Modern Portfolio Theory. The purpose is to select **10 stocks from a pool of 25 stocks** and assign weights that balance return and risk.
+
+The project also compares the optimized portfolio against a simple **buy-and-hold S&P 500 strategy** using SPY.
+
+The system is designed to run automatically using GitHub Actions, meaning the model can update without manually running the code.
+
+---
+
+# Main Results Summary
+
+::: {.callout-note appearance="simple"}
+
+### 📊 Model Highlights
+
+**Annual Return:** <span style="color:#34d399">`r pct(data.get("ann_return",0))`</span>  
+**Sharpe Ratio:** <span style="color:#f9c74f">`r num(data.get("sharpe",0))`</span>  
+**Risk:** <span style="color:#60a5fa">`r pct(data.get("ann_risk",0))`</span>  
+**VIX Level:** <span style="color:#f472b6">`r data.get("vix","N/A")`</span>
+
+:::
+```{python}
+main_results = pd.DataFrame({
+    "Metric": [
+        "Run Date",
+        "Model Mode",
+        "Annualized Return",
+        "Annualized Risk",
+        "Sharpe Ratio",
+        "VIX Level",
+        "Paper Portfolio Value",
+        "SPY Paper Value"
+    ],
+    "Value": [
+        data.get("run_date", "N/A"),
+        data.get("mode", "N/A"),
+        pct(data.get("ann_return", 0)),
+        pct(data.get("ann_risk", 0)),
+        num(data.get("sharpe", 0)),
+        data.get("vix", "N/A"),
+        money(paper.get("portfolio_value", 0)),
+        money(paper.get("spy_value", 0))
+    ]
+})
+
+main_results
+```
+
+## What these results mean
+
+- **Annualized Return** estimates how much the portfolio could return over one year based on recent data.
+- **Annualized Risk** measures volatility, or how much the portfolio value may move up and down.
+- **Sharpe Ratio** measures return compared to risk. A higher Sharpe Ratio means stronger risk-adjusted performance.
+- **VIX Level** measures market fear. Higher VIX means more market uncertainty.
+- **Paper Portfolio Value** tracks a simulated $10,000 portfolio using the model.
+- **SPY Paper Value** shows what would have happened if the same $10,000 was invested in the S&P 500 ETF.
+
+---
+
+# Dataset and Inputs
+
+```{python}
+dataset_info = pd.DataFrame({
+    "Item": [
+        "Data Source",
+        "Benchmark",
+        "Number of Stocks in Pool",
+        "Number of Stocks Selected",
+        "Sectors Used",
+        "Sliding Window",
+        "Minimum Weight",
+        "Maximum Weight"
+    ],
+    "Value": [
+        "Yahoo Finance",
+        "S&P 500 ETF (SPY)",
+        data.get("n_stocks_pool", "N/A"),
+        data.get("n_stocks_selected", "N/A"),
+        "Fashion, Beauty, Music, Healthcare, Tech",
+        str(data.get("window_days", "N/A")) + " days",
+        pct(data.get("min_weight", 0)),
+        pct(data.get("max_weight", 0))
+    ]
+})
+
+dataset_info
+```
+
+## What this means
+
+The model uses recent Yahoo Finance stock data. It compares the optimized portfolio against SPY because SPY represents the S&P 500 and works as a simple market baseline.
+
+The model uses a sliding window, meaning it only looks at the most recent market data instead of using old historical data forever.
+
+---
+
+# Model Formulation
+
+The optimizer uses two types of decision variables.
+
+| Variable | Meaning |
+|---|---|
+| `Yᵢ` | Binary variable. Equals 1 if stock `i` is selected and 0 if it is not selected. |
+| `Xᵢ` | Continuous variable. Represents the portfolio weight assigned to stock `i`. |
+
+---
+
+# Model Constraints
+
+The portfolio must follow these constraints:
+
+$$
+\sum X_i = 1
+$$
+
+This means all portfolio weights must add up to 100%.
+
+$$
+\sum Y_i = 10
+$$
+
+This means the model must select exactly 10 stocks.
+
+$$
+0.05Y_i \leq X_i \leq 0.40Y_i
+$$
+
+This is the linking constraint. It connects the binary variable `Yᵢ` with the weight variable `Xᵢ`.
+
+## What the linking constraint means
+
+If a stock is selected:
+
+```text
+Yᵢ = 1
+```
+
+Then:
+
+```text
+0.05 ≤ Xᵢ ≤ 0.40
+```
+
+So the selected stock must receive at least 5% and at most 40%.
+
+If a stock is not selected:
+
+```text
+Yᵢ = 0
+```
+
+Then:
+
+```text
+Xᵢ = 0
+```
+
+So the model cannot give money to stocks that were not selected.
+
+---
+
+# Objective Function
+
+The model tries to maximize the Sharpe Ratio:
+
+$$
+Sharpe = \frac{R_p - R_f}{\sigma_p}
+$$
+
+| Symbol | Meaning |
+|---|---|
+| `Rₚ` | Expected portfolio return |
+| `R_f` | Risk-free rate |
+| `σₚ` | Portfolio risk |
+
+## What this means
+
+The Sharpe Ratio helps the model choose the portfolio that gives the best return for the amount of risk taken.
+
+A portfolio with a high return but extremely high risk may not be ideal. The Sharpe Ratio balances both return and risk.
+
+---
+
+# Selected Portfolio Allocation
+
+```{python}
+allocation_rows = []
+
+for stock, info in allocation.items():
+    allocation_rows.append({
+        "Stock": stock,
+        "Ticker": info.get("ticker", ""),
+        "Sector": info.get("sector", ""),
+        "Weight": pct(info.get("weight", 0))
+    })
+
+allocation_df = pd.DataFrame(allocation_rows)
+
+if len(allocation_df) > 0:
+    allocation_df
+else:
+    pd.DataFrame({"Message": ["No allocation data found. Run optimizer.py first."]})
+```
+
+## What this means
+
+This table shows the 10 stocks chosen by the optimizer. Each selected stock receives a weight between the minimum and maximum limits.
+
+The weights show how much of the simulated portfolio should be invested in each stock.
+
+---
+
+# Portfolio vs S&P 500
+
+```{python}
+comparison_table = pd.DataFrame({
+    "Metric": [
+        "Annualized Return",
+        "Annualized Risk",
+        "Sharpe Ratio",
+        "Max Drawdown",
+        "Paper Trading Value"
+    ],
+    "Optimized Portfolio": [
+        pct(data.get("ann_return", 0)),
+        pct(data.get("ann_risk", 0)),
+        num(data.get("sharpe", 0)),
+        "Not calculated",
+        money(paper.get("portfolio_value", 0))
+    ],
+    "S&P 500 / SPY": [
+        pct(spy.get("annualized_ret", 0)),
+        pct(spy.get("annualized_vol", 0)),
+        num(spy.get("sharpe", 0)),
+        pct(spy.get("max_drawdown", 0)),
+        money(paper.get("spy_value", 0))
+    ]
+})
+
+comparison_table
+```
+
+## What this means
+
+This table compares the optimized model against a simple S&P 500 investment.
+
+If the optimized portfolio has a higher Sharpe Ratio than SPY, then the model performed better on a risk-adjusted basis.
+
+If the optimized portfolio has a higher return but also much higher risk, then the Sharpe Ratio helps decide whether the extra return is worth the extra risk.
+
+---
+
+# Efficient Frontier
+
+The efficient frontier shows the tradeoff between expected return and risk.
+
+Each point represents a possible portfolio. The chosen portfolio should be near the best risk-return tradeoff.
+
+```{python}
+path = Path("results/efficient_frontier.png")
+if path.exists():
+    display(Image(filename=str(path), width=900))
+else:
+    print("Efficient frontier chart has not been created yet.")
+```
+
+## What this chart means
+
+- The x-axis shows risk.
+- The y-axis shows return.
+- Portfolios higher up have higher expected return.
+- Portfolios further right have higher risk.
+- The optimal point is the portfolio that gives the best risk-adjusted return.
+
+---
+
+# Allocation Pie Chart
+
+```{python}
+path = Path("results/allocation_pie.png")
+if path.exists():
+    display(Image(filename=str(path), width=900))
+else:
+    print("Allocation pie chart has not been created yet.")
+```
+
+## What this chart means
+
+This chart shows how the model divides money across the selected stocks.
+
+A larger slice means the model allocated a larger part of the portfolio to that stock.
+
+---
+
+# Paper Trading Simulation
+
+```{python}
+paper_path = Path("results/paper_trading.csv")
+
+if paper_path.exists():
+    paper_df = pd.read_csv(paper_path)
+    print("Preview of paper trading simulation (first 20 rows):")
+    print(f"Dataset shape: {paper_df.shape}")
+    display(paper_df.head(20))
+else:
+    display(pd.DataFrame({"Message": ["paper_trading.csv has not been created yet."]}))
+```
+
+```{python}
+path = Path("results/paper_trading.png")
+if path.exists():
+    display(Image(filename=str(path), width=900))
+else:
+    print("Paper trading chart needs at least 2 days of history before it appears.")
+```
+
+## What this means
+
+This chart shows how a simulated **$10,000 portfolio** changes over time if the optimizer’s daily allocation decisions are followed.
+
+- The yellow line represents the optimized portfolio.
+- The dashed blue line represents the S&P 500 benchmark using SPY.
+- When the yellow line rises, the portfolio is growing.
+- When it falls, the portfolio is losing value.
+- Comparing the yellow line to SPY shows whether the active optimization strategy is adding value compared to passive investing.
+
+In this backtest, the portfolio changes each day because the model recalculates returns, risk, and optimal weights using the rolling 60-day window. This helps show whether the strategy performs well over time, not just on one single day.
+
+---
+
+# Weight History
+
+```{python}
+weight_path = Path("results/weight_history.csv")
+
+if weight_path.exists():
+    weight_df = pd.read_csv(weight_path)
+    print("Preview of daily allocation weight history (first 20 rows):")
+    print(f"Dataset shape: {weight_df.shape}")
+    display(weight_df.head(20))
+else:
+    display(pd.DataFrame({"Message": ["weight_history.csv has not been created yet."]}))
+```
+
+```{python}
+path = Path("results/weight_history.png")
+if path.exists():
+    display(Image(filename=str(path), width=900))
+else:
+    print("Weight history chart needs at least 2 days of history before it appears.")
+```
+
+## What this means
+
+This chart shows how the model changes the stock allocation weights over time.
+
+Each line represents one stock’s portfolio weight. When a line rises, the optimizer is giving that stock more weight. When a line falls to zero, the stock was removed from the selected portfolio for that day.
+
+This is important because it proves the portfolio is not static. The model is rebalancing daily based on updated market data from the sliding 60-day window.
+
+The chart also shows the linking constraints in action:
+
+- selected stocks receive at least 5%
+- no selected stock exceeds 40%
+- unselected stocks receive 0%
+
+Overall, this chart shows how the optimizer actively adjusts the portfolio as market conditions change.
+---
+
+# Golden Cross Signals
+
+```{python}
+gc_rows = []
+
+for ticker, signal in golden_cross.items():
+    gc_rows.append({
+        "Ticker": ticker,
+        "Signal": signal
+    })
+
+gc_df = pd.DataFrame(gc_rows)
+
+if len(gc_df) > 0:
+    gc_df
+else:
+    pd.DataFrame({"Message": ["No Golden Cross signal data found."]})
+```
+
+## What this means
+
+Golden Cross signals are used as a momentum indicator.
+
+| Signal | Meaning |
+|---|---|
+| Bullish | Short-term trend is stronger than long-term trend |
+| Bearish | Short-term trend is weaker than long-term trend |
+| Neutral | No clear trend signal |
+
+The model calculates this using a 10-day moving average and a 30-day moving average.
+
+---
+
+# VIX Fear Index Logic
+
+```{python}
+vix_table = pd.DataFrame({
+    "Item": [
+        "Current VIX",
+        "VIX Threshold",
+        "Model Mode"
+    ],
+    "Value": [
+        data.get("vix", "N/A"),
+        28,
+        data.get("mode", "N/A")
+    ]
+})
+
+vix_table
+```
+
+## What this means
+
+The model uses VIX as a fear-index signal.
+
+If:
+
+```text
+VIX > 28
+```
+
+the model switches to minimum-variance mode. This means it focuses more on reducing risk.
+
+If:
+
+```text
+VIX ≤ 28
+```
+
+the model uses maximum-Sharpe mode. This means it focuses on the best return per unit of risk.
+
+---
+
+# Optimizer Code Explanation
+
+This section explains the main parts of `optimizer.py`.
+
+---
+
+## 1. Import Libraries
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.optimize import minimize, Bounds
+import yfinance as yf
+from datetime import datetime, timedelta
+import json, os
+```
+
+### What this does
+
+- `numpy` handles numerical calculations.
+- `pandas` handles tables and return calculations.
+- `matplotlib` creates charts.
+- `scipy.optimize` solves the portfolio optimization problem.
+- `yfinance` downloads market data.
+- `json` saves dashboard results.
+- `os` creates folders and manages file paths.
+
+---
+
+## 2. Define Stock Pool
+
+```python
+STOCKS = {
+    "Apple": ("AAPL", "Tech"),
+    "Nike": ("NKE", "Fashion"),
+    "Spotify": ("SPOT", "Music")
+}
+```
+
+### What this does
+
+The full script stores 25 companies. Each stock has:
+
+- company name
+- ticker symbol
+- sector
+
+This lets the model choose from a larger pool and maintain sector diversification.
+
+---
+
+## 3. Set Model Parameters
+
+```python
+N_SELECT = 10
+MIN_WEIGHT = 0.05
+MAX_WEIGHT = 0.40
+WINDOW_DAYS = 60
+RESULTS_DIR = "results"
+```
+
+### What this does
+
+These settings control the model:
+
+| Parameter | Meaning |
+|---|---|
+| `N_SELECT` | exactly 10 stocks selected |
+| `MIN_WEIGHT` | selected stocks must receive at least 5% |
+| `MAX_WEIGHT` | selected stocks cannot exceed 40% |
+| `WINDOW_DAYS` | model uses recent 60-day window |
+| `RESULTS_DIR` | stores dashboard output files |
+
+---
+
+## 4. Fetch Market Data
+
+```python
+tickers = [v[0] for v in STOCKS.values()] + ["SPY", "^VIX"]
+
+raw = yf.download(
+    tickers,
+    start=start.strftime("%Y-%m-%d"),
+    end=end.strftime("%Y-%m-%d"),
+    interval="1d",
+    auto_adjust=True,
+    progress=False
+)
+```
+
+### What this does
+
+This downloads daily price data for:
+
+- all stocks in the pool
+- SPY as the S&P 500 benchmark
+- VIX as the fear index
+
+The model uses this data to calculate returns and risk.
+
+---
+
+## 5. Calculate Returns
+
+```python
+returns = stock_prices.pct_change().dropna()
+mu = returns.mean()
+cov = returns.cov()
+```
+
+### What this does
+
+This converts stock prices into daily returns.
+
+Then it calculates:
+
+- `mu`: average daily return for each stock
+- `cov`: covariance matrix showing how stocks move together
+
+These are needed for Modern Portfolio Theory.
+
+---
+
+## 6. Portfolio Statistics
+
+```python
+ret = np.dot(w, mu) * 252
+risk = np.sqrt(w @ cov @ w * 252)
+```
+
+### What this does
+
+This calculates:
+
+- annualized portfolio return
+- annualized portfolio risk
+
+The number `252` is used because there are about 252 trading days in a year.
+
+---
+
+## 7. Optimization Objective
+
+```python
+def obj(w):
+    ret = np.dot(w, mu_s) * 252
+    risk = np.sqrt(w @ cov_s @ w * 252)
+    return -(ret - 0.05) / risk
+```
+
+### What this does
+
+The optimizer minimizes the negative Sharpe Ratio.
+
+This is the same as maximizing the Sharpe Ratio.
+
+---
+
+## 8. Constraints and Bounds
+
+```python
+constraints = [{"type": "eq", "fun": lambda w: np.sum(w) - 1}]
+bounds = Bounds(min_w, max_w)
+```
+
+### What this does
+
+The constraint forces the portfolio weights to sum to 1.
+
+The bounds force each selected stock to stay between the minimum and maximum weight limits.
+
+---
+
+## 9. Stock Selection Logic
+
+```python
+chosen.extend(pool_sorted[:2])
+```
+
+### What this does
+
+The model begins by selecting strong candidates from each sector.
+
+This supports diversification because it prevents the optimizer from choosing all stocks from one sector.
+
+---
+
+## 10. Local Search Improvement
+
+```python
+for drop in sector_in_chosen:
+    for add in sector_not_chosen:
+        candidate = [i if i != drop else add for i in best_subset]
+```
+
+### What this does
+
+After the first selection, the model tries swaps.
+
+It removes one stock and adds another stock from the same sector to see if Sharpe Ratio improves.
+
+This improves the final selected portfolio.
+
+---
+
+## 11. S&P 500 Comparison
+
+```python
+spy_ret = (spy.iloc[-1] / spy.iloc[0]) - 1
+spy_vol = spy.pct_change().dropna().std() * np.sqrt(252)
+```
+
+### What this does
+
+This calculates SPY return, risk, drawdown, and Sharpe Ratio.
+
+This gives a baseline to compare the optimized portfolio against.
+
+---
+
+## 12. Paper Trading Tracker
+
+```python
+port_val *= (1 + port_daily)
+```
+
+### What this does
+
+This updates the simulated portfolio value each day.
+
+The portfolio starts at $10,000 and changes based on the daily return of the selected stocks.
+
+---
+
+## 13. Save JSON Output
+
+```python
+with open("results/latest.json", "w") as f:
+    json.dump(summary, f, indent=2)
+```
+
+### What this does
+
+This saves the latest model results into a JSON file.
+
+The dashboard reads this file to display updated results.
+
+---
+
+## 14. Save Charts
+
+```python
+plot_efficient_frontier(...)
+plot_allocation_pie(...)
+plot_paper_trading(...)
+plot_weight_history(...)
+```
+
+### What this does
+
+These functions create visual outputs for:
+
+- efficient frontier
+- portfolio allocation
+- paper trading performance
+- allocation changes over time
+
+These charts make the model easier to understand.
+
+---
+
+# GitHub Actions Workflow Explanation
+
+This section explains the `.yml` workflow file.
+
+---
+
+## Workflow Purpose
+
+The workflow automatically runs the optimizer on GitHub.
+
+Instead of manually running the code, GitHub Actions runs it on a schedule and updates the results folder.
+
+---
+
+## 1. Workflow Name
+
+```yaml
+name: Daily Portfolio Update
+```
+
+### What this does
+
+This gives the workflow a readable name inside the GitHub Actions tab.
+
+---
+
+## 2. Schedule
+
+```yaml
+on:
+  schedule:
+    - cron: '55 20 * * 1-5'
+  workflow_dispatch:
+```
+
+### What this does
+
+This runs the workflow Monday through Friday.
+
+It also allows the workflow to be run manually using the **Run workflow** button.
+
+---
+
+## 3. Runner
+
+```yaml
+runs-on: ubuntu-latest
+```
+
+### What this does
+
+GitHub creates a temporary Linux computer to run the project.
+
+This is why file names must match exactly, including capitalization.
+
+---
+
+## 4. Permissions
+
+```yaml
+permissions:
+  contents: write
+```
+
+### What this does
+
+This allows the workflow to push updated result files back into the repository.
+
+Without this permission, GitHub Actions could run the script but might not be able to save updates.
+
+---
+
+## 5. Checkout Repository
+
+```yaml
+- name: Checkout repository
+  uses: actions/checkout@v4
+```
+
+### What this does
+
+This downloads the repository files into the GitHub Actions runner.
+
+---
+
+## 6. Set Up Python
+
+```yaml
+- name: Set up Python 3.10
+  uses: actions/setup-python@v4
+  with:
+    python-version: '3.10'
+```
+
+### What this does
+
+This installs Python 3.10 in the GitHub runner.
+
+---
+
+## 7. Install Dependencies
+
+```yaml
+- name: Install dependencies
+  run: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+```
+
+### What this does
+
+This installs all required Python packages listed in `requirements.txt`.
+
+Examples include:
+
+- pandas
+- numpy
+- scipy
+- yfinance
+- matplotlib
+
+---
+
+## 8. Run Optimizer
+
+```yaml
+- name: Run Portfolio Optimizer
+  run: python optimizer.py
+```
+
+### What this does
+
+This runs the main optimization script.
+
+It downloads data, runs the model, creates charts, saves CSV files, and updates `latest.json`.
+
+---
+
+## 9. Commit and Push Results
+
+```yaml
+git add results/
+git commit -m "Daily update"
+git pull --rebase origin main
+git push
+```
+
+### What this does
+
+This saves the newly generated results back into GitHub.
+
+This is what makes the dashboard update over time.
+
+---
+
+# Output Files Explained
+
+```{python}
+outputs = pd.DataFrame({
+    "File": [
+        "results/latest.json",
+        "results/REPORT.md",
+        "results/efficient_frontier.png",
+        "results/allocation_pie.png",
+        "results/paper_trading.csv",
+        "results/weight_history.csv",
+        "Dashboard.html",
+        "portfolio_dashboard.html"
+    ],
+    "Purpose": [
+        "Stores latest model results for the dashboard",
+        "Markdown summary report generated by optimizer",
+        "Shows risk-return efficient frontier",
+        "Shows portfolio allocation weights",
+        "Tracks simulated $10,000 portfolio value",
+        "Tracks how weights change over time",
+        "Live-style HTML dashboard",
+        "Quarto explanation dashboard/report"
+    ]
+})
+
+outputs
+```
+
+---
+
+# Final Interpretation
+
+The outputs from the optimizer show how the portfolio adapts to recent market conditions using Modern Portfolio Theory and momentum signals.
+
+The model selects 10 stocks from a diversified pool of 25 companies and assigns weights between 5% and 40% to balance return and risk. The optimized allocation focuses on achieving a higher Sharpe Ratio than a simple market investment in SPY, meaning the strategy aims to produce stronger returns per unit of volatility rather than just higher raw returns.
+
+The efficient frontier chart confirms that the selected portfolio lies near the best risk-return tradeoff among available combinations, while the allocation pie chart shows how the optimizer distributes investment across sectors to maintain diversification.
+
+The paper trading simulation tracks how a $10,000 portfolio would perform if the strategy were followed over time. Comparing this simulated portfolio against SPY helps evaluate whether the optimization approach adds value beyond passive investing.
+
+The Golden Cross indicators provide short-term momentum signals that support timing decisions, while the VIX fear index allows the model to automatically switch between return-focused mode (max-Sharpe) and risk-reduction mode (minimum-variance) depending on market uncertainty.
+
+Because the optimizer runs automatically through GitHub Actions using updated Yahoo Finance data, the system behaves like a live decision-support tool rather than a one-time analysis. This demonstrates how portfolio optimization models can be used in practice to support ongoing investment allocation decisions.

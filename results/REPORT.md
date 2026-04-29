@@ -10,19 +10,19 @@
 
 | Stock | Ticker | Sector | Weight | Binary Y |
 |-------|--------|--------|--------|----------|
-| SiriusXM | `SIRI` | Music | **36.61%** | ✅ 1 |
-| UnitedHealth | `UNH` | Healthcare | **22.13%** | ✅ 1 |
-| iHeartMedia | `IHRT` | Music | **6.26%** | ✅ 1 |
+| SiriusXM | `SIRI` | Music | **29.16%** | ✅ 1 |
+| Nvidia | `NVDA` | Tech | **23.66%** | ✅ 1 |
+| Johnson & J | `JNJ` | Healthcare | **12.18%** | ✅ 1 |
 | Ralph Lauren | `RL` | Fashion | **5.00%** | ✅ 1 |
 | Tapestry | `TPR` | Fashion | **5.00%** | ✅ 1 |
-| Coty | `COTY` | Beauty | **5.00%** | ✅ 1 |
+| Ulta Beauty | `ULTA` | Beauty | **5.00%** | ✅ 1 |
 | Inter Parfums | `IPAR` | Beauty | **5.00%** | ✅ 1 |
-| Pfizer | `PFE` | Healthcare | **5.00%** | ✅ 1 |
-| Nvidia | `NVDA` | Tech | **5.00%** | ✅ 1 |
+| Live Nation | `LYV` | Music | **5.00%** | ✅ 1 |
+| UnitedHealth | `UNH` | Healthcare | **5.00%** | ✅ 1 |
 | Alphabet | `GOOGL` | Tech | **5.00%** | ✅ 1 |
 
 **Stocks excluded (Y=0, X=0):**
-`LVMUY`, `NKE`, `LULU`, `EL`, `ULTA`, `ELF`, `LYV`, `WMG`, `SPOT`, `JNJ`, `LLY`, `ABBV`, `AAPL`, `MSFT`, `META`
+`LVMUY`, `NKE`, `LULU`, `EL`, `ELF`, `COTY`, `WMG`, `SPOT`, `IHRT`, `LLY`, `PFE`, `ABBV`, `AAPL`, `MSFT`, `META`
 
 ---
 
@@ -30,10 +30,10 @@
 
 | Metric | Our Portfolio | S&P 500 (SPY) |
 |--------|--------------|---------------|
-| Annualised Return | **94.69%** | 28.64% |
-| Annualised Risk   | 19.94% | 15.65% |
-| Sharpe Ratio      | **4.497** | 1.510 |
-| Max Drawdown      | — | -8.58% |
+| Annualised Return | **45.76%** | 16.46% |
+| Annualised Risk   | 16.04% | 13.79% |
+| Sharpe Ratio      | **2.540** | 0.831 |
+| Max Drawdown      | — | -8.88% |
 
 ---
 
@@ -41,9 +41,9 @@
 
 | Portfolio Value | SPY Value |
 |----------------|-----------|
-| **$9,992.62** | $10,017.23 |
+| **$10,247.24** | $10,785.19 |
 
-Return vs Buy-and-Hold SPY: **-0.07%** vs 0.17%
+Return vs Buy-and-Hold SPY: **2.47%** vs 7.85%
 
 ---
 

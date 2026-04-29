@@ -18,8 +18,8 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Coty": {
-      "ticker": "COTY",
+    "Ulta Beauty": {
+      "ticker": "ULTA",
       "sector": "Beauty",
       "weight": 0.05
     },
@@ -28,30 +28,30 @@
       "sector": "Beauty",
       "weight": 0.05
     },
-    "iHeartMedia": {
-      "ticker": "IHRT",
+    "Live Nation": {
+      "ticker": "LYV",
       "sector": "Music",
-      "weight": 0.0626
+      "weight": 0.05
     },
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.3661
+      "weight": 0.2916
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.2213
-    },
-    "Pfizer": {
-      "ticker": "PFE",
-      "sector": "Healthcare",
       "weight": 0.05
+    },
+    "Johnson & J": {
+      "ticker": "JNJ",
+      "sector": "Healthcare",
+      "weight": 0.1218
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.05
+      "weight": 0.2366
     },
     "Alphabet": {
       "ticker": "GOOGL",
@@ -59,19 +59,19 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.9469,
-  "ann_risk": 0.1994,
-  "sharpe": 4.4975,
+  "ann_return": 0.4576,
+  "ann_risk": 0.1604,
+  "sharpe": 2.5405,
   "spy": {
-    "total_return": 0.0502,
-    "annualized_ret": 0.2864,
-    "max_drawdown": -0.0858,
-    "annualized_vol": 0.1565,
-    "sharpe": 1.51
+    "total_return": 0.0566,
+    "annualized_ret": 0.1646,
+    "max_drawdown": -0.0888,
+    "annualized_vol": 0.1379,
+    "sharpe": 0.831
   },
   "paper_trading": {
-    "portfolio_value": 9992.62,
-    "spy_value": 10017.23
+    "portfolio_value": 10247.24,
+    "spy_value": 10785.19
   },
   "golden_cross": {
     "LVMUY": "bullish",

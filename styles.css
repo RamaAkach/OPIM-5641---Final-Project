@@ -1,0 +1,57 @@
+/* Background */
+body {
+  background-color: #0f0f1a;
+  color: #e6e6ff;
+}
+
+/* Titles */
+h1 {
+  color: #f9c74f;
+}
+
+h2 {
+  color: #c084fc;
+}
+
+h3 {
+  color: #60a5fa;
+}
+
+/* Tables */
+table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Code blocks */
+pre {
+  background-color: #1a1a2e !important;
+  border-radius: 10px;
+}
+
+/* Cards */
+.quarto-dashboard-card {
+  background: #151528;
+  border: 1px solid #333355;
+  border-radius: 14px;
+}
+
+/* Links */
+a {
+  color: #f472b6;
+}
+
+/* Highlight numbers */
+strong {
+  color: #34d399;
+}
+
+/* Chart containers */
+img {
+  border-radius: 12px;
+}
+
+img {
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(96,165,250,.35);
+}
