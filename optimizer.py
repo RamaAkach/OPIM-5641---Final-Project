@@ -755,67 +755,74 @@ def run_historical_backtest(prices: pd.DataFrame):
     plot_weight_history(weight_path, f"{RESULTS_DIR}/weight_history.png")
 
     print("  ✓ Time-series charts created.")
+    return {
+        "portfolio_value": round(float(paper_df["portfolio_value"].iloc[-1]), 2),
+        "spy_value": round(float(paper_df["spy_value"].iloc[-1]), 2)
+    }
+
 
 def main():
     run_date = datetime.today().strftime("%Y-%m-%d")
     os.makedirs(RESULTS_DIR, exist_ok=True)
 
     print(f"\n{'='*58}")
-    print(f"  🎶 Coachella & Glamour Optimizer — {run_date}")
+    print(f"  🎶 Tech & Glamour Optimizer — {run_date}")
     print(f"  Sectors: Fashion · Beauty · Music · Healthcare · Tech")
     print(f"  Window: {WINDOW_DAYS} days  |  Selecting {N_SELECT} of {len(STOCKS)} stocks")
     print(f"{'='*58}\n")
 
-    # ── Fetch ─────────────────────────────────────────────────
+    # ── Fetch data ────────────────────────────────────────────
     print("📥 Fetching market data (25 stocks + SPY + VIX)...")
     prices = fetch_all(WINDOW_DAYS)
+
+    # ── Run historical backtest for time-series charts ─────────
     paper = run_historical_backtest(prices)
-    return {
-    "portfolio_value": round(float(paper_df["portfolio_value"].iloc[-1]), 2),
-    "spy_value": round(float(paper_df["spy_value"].iloc[-1]), 2)
-}
+
+    # Fallback if backtest fails
+    if paper is None:
+        paper = {"portfolio_value": PAPER_VALUE, "spy_value": PAPER_VALUE}
 
     stock_tickers = [v[0] for v in STOCKS.values()]
-    available     = [t for t in stock_tickers if t in prices.columns]
+    available = [t for t in stock_tickers if t in prices.columns]
     print(f"  Available: {len(available)} / {len(stock_tickers)} stock tickers")
 
     if len(available) < N_SELECT:
         print("❌ Not enough data. Exiting.")
         return
 
-    # ── Returns ───────────────────────────────────────────────
+    # ── Current-day optimization ──────────────────────────────
     stock_prices = prices[available].dropna(how="all")
-    returns      = stock_prices.pct_change().dropna()
+    returns = stock_prices.pct_change().dropna()
 
     if len(returns) < 5:
         print("❌ Insufficient return history. Exiting.")
         return
 
-    mu  = returns.mean()          # daily mean returns
-    cov = returns.cov()           # daily covariance matrix
+    mu = returns.mean()
+    cov = returns.cov()
 
     print(f"\n📊 Daily mean returns computed over {len(returns)} trading days")
 
     # ── Fear index ────────────────────────────────────────────
-    vix       = get_vix_level(prices)
+    vix = get_vix_level(prices)
     fear_mode = vix > VIX_THRESHOLD
-    print(f"\n🌡️  VIX: {vix:.1f}  →  {'⚠️  HIGH — switching to min-variance mode' if fear_mode else '✅ Normal — max-Sharpe mode'}")
+    print(f"\n🌡️  VIX: {vix:.1f}  →  {'⚠️ HIGH — switching to min-variance mode' if fear_mode else '✅ Normal — max-Sharpe mode'}")
 
     # ── Golden Cross ──────────────────────────────────────────
     gc_signals = golden_cross_signal(prices)
-    bullish    = [t for t, s in gc_signals.items() if s == "bullish"]
-    bearish    = [t for t, s in gc_signals.items() if s == "bearish"]
+    bullish = [t for t, s in gc_signals.items() if s == "bullish"]
+    bearish = [t for t, s in gc_signals.items() if s == "bearish"]
     print(f"\n📡 Golden Cross — Bullish: {len(bullish)}  Bearish: {len(bearish)}")
 
-    # ── MILP-style optimisation ────────────────────────────────
-    print(f"\n⚙️  Running optimisation (binary Y + linking constraints)...")
+    # ── Optimization ──────────────────────────────────────────
+    print("\n⚙️  Running optimisation (binary Y + linking constraints)...")
     ann_return, ann_risk, weights_arr, sharpe = milp_optimize(
         mu, cov, MIN_WEIGHT, MAX_WEIGHT, N_SELECT, fear_mode=fear_mode
     )
 
-    # Build weights map (only selected stocks > threshold)
     weights_map = {}
-    name_list   = [nm for nm in STOCKS if STOCKS[nm][0] in available]
+    name_list = [nm for nm in STOCKS if STOCKS[nm][0] in available]
+
     for nm, w in zip(name_list, weights_arr):
         if w >= MIN_WEIGHT - 1e-6:
             weights_map[nm] = round(float(w), 4)
@@ -824,14 +831,15 @@ def main():
     for nm, w in sorted(weights_map.items(), key=lambda x: -x[1]):
         tkr, sec = STOCKS[nm]
         print(f"  {nm:18s} ({tkr:5s}) [{sec:10s}]: {w:.2%}")
+
     print(f"\n  Annualised Return: {ann_return:.2%}")
     print(f"  Annualised Risk:   {ann_risk:.2%}")
     print(f"  Sharpe Ratio:      {sharpe:.3f}")
 
-    # ── Efficient frontier (for chart) ────────────────────────
+    # ── Efficient frontier ────────────────────────────────────
     print("\n📈 Computing efficient frontier for chart...")
     sel_tickers = [STOCKS[nm][0] for nm in weights_map if STOCKS[nm][0] in available]
-    mu_sel  = mu[sel_tickers]
+    mu_sel = mu[sel_tickers]
     cov_sel = cov.loc[sel_tickers, sel_tickers]
     frontier = compute_frontier(mu_sel, cov_sel, n_points=N_FRONTIER)
     print(f"  {len(frontier)} feasible frontier points")
@@ -843,43 +851,72 @@ def main():
 
     # ── Save JSON summary ─────────────────────────────────────
     summary = {
-        "run_date":   run_date,
-        "mode":       "min_variance" if fear_mode else "max_sharpe",
-        "vix":        round(vix, 2),
+        "run_date": run_date,
+        "mode": "min_variance" if fear_mode else "max_sharpe",
+        "vix": round(vix, 2),
         "window_days": WINDOW_DAYS,
         "n_stocks_selected": len(weights_map),
-        "n_stocks_pool":     len(STOCKS),
-        "min_weight":  MIN_WEIGHT,
-        "max_weight":  MAX_WEIGHT,
-        "allocation":  {nm: {"ticker": STOCKS[nm][0], "sector": STOCKS[nm][1], "weight": w}
-                        for nm, w in weights_map.items()},
-        "ann_return":  round(ann_return, 4),
-        "ann_risk":    round(ann_risk,   4),
-        "sharpe":      round(sharpe,     4),
-        "spy":         spy_stats,
+        "n_stocks_pool": len(STOCKS),
+        "min_weight": MIN_WEIGHT,
+        "max_weight": MAX_WEIGHT,
+        "allocation": {
+            nm: {
+                "ticker": STOCKS[nm][0],
+                "sector": STOCKS[nm][1],
+                "weight": w
+            }
+            for nm, w in weights_map.items()
+        },
+        "ann_return": round(ann_return, 4),
+        "ann_risk": round(ann_risk, 4),
+        "sharpe": round(sharpe, 4),
+        "spy": spy_stats,
         "paper_trading": paper,
-        "golden_cross":  gc_signals,
+        "golden_cross": gc_signals,
     }
+
     with open(f"{RESULTS_DIR}/latest.json", "w") as f:
         json.dump(summary, f, indent=2)
+
     print(f"  ✓ JSON → {RESULTS_DIR}/latest.json")
 
     # ── Save charts ───────────────────────────────────────────
     print("\n💾 Saving charts...")
+
     if frontier:
         opt_pt = sharpe_max_point(frontier)
         if opt_pt:
-            plot_efficient_frontier(frontier, opt_pt[0], opt_pt[1],
-                                    run_date, f"{RESULTS_DIR}/efficient_frontier.png")
+            plot_efficient_frontier(
+                frontier,
+                opt_pt[0],
+                opt_pt[1],
+                run_date,
+                f"{RESULTS_DIR}/efficient_frontier.png"
+            )
 
     plot_allocation_pie(weights_map, run_date, f"{RESULTS_DIR}/allocation_pie.png")
+
+    # These paths are created by run_historical_backtest()
+    paper_path = f"{RESULTS_DIR}/paper_trading.csv"
+    wh_path = f"{RESULTS_DIR}/weight_history.csv"
+
     plot_paper_trading(paper_path, f"{RESULTS_DIR}/paper_trading.png")
     plot_weight_history(wh_path, f"{RESULTS_DIR}/weight_history.png")
 
     # ── Save report ───────────────────────────────────────────
-    save_report(f"{RESULTS_DIR}/REPORT.md", run_date,
-                weights_map, ann_return, ann_risk, sharpe,
-                spy_stats, vix, fear_mode, gc_signals, paper)
+    save_report(
+        f"{RESULTS_DIR}/REPORT.md",
+        run_date,
+        weights_map,
+        ann_return,
+        ann_risk,
+        sharpe,
+        spy_stats,
+        vix,
+        fear_mode,
+        gc_signals,
+        paper
+    )
 
     print(f"\n🎉 Done! All outputs in ./{RESULTS_DIR}/\n")
 
