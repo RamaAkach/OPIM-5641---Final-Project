@@ -36,9 +36,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add results/
+      
+          git add results/ portfolio_dashboard.html portfolio_dashboard_files/ Dashboard.html
           git commit -m "Daily update: $(date '+%Y-%m-%d %H:%M UTC')" || echo "No changes to commit"
-
-          git pull --rebase origin main
+      
+          git pull --rebase --autostash origin main
           git push
