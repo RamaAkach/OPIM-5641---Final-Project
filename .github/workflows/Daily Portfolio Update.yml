@@ -30,7 +30,7 @@ jobs:
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
       - name: Render Quarto dashboard
-        run: quarto render dashboard.qmd
+        run: quarto render portfolio_dashboard.qmd
       - name: Commit and push results
         run: |
           git config --global user.name "github-actions[bot]"
