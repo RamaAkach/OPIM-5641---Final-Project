@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-04-30",
+  "run_date": "2026-05-01",
   "mode": "max_sharpe",
-  "vix": 18.81,
+  "vix": 16.89,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -28,57 +28,57 @@
       "sector": "Beauty",
       "weight": 0.05
     },
-    "Live Nation": {
-      "ticker": "LYV",
+    "iHeartMedia": {
+      "ticker": "IHRT",
       "sector": "Music",
       "weight": 0.05
     },
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2379
+      "weight": 0.1912
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.0546
+      "weight": 0.05
     },
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.2779
+      "weight": 0.2555
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.1296
+      "weight": 0.0656
     },
     "Alphabet": {
       "ticker": "GOOGL",
       "sector": "Tech",
-      "weight": 0.05
+      "weight": 0.1877
     }
   },
-  "ann_return": 0.3919,
-  "ann_risk": 0.1339,
-  "sharpe": 2.5534,
+  "ann_return": 0.4972,
+  "ann_risk": 0.1489,
+  "sharpe": 3.0026,
   "spy": {
-    "total_return": 0.0542,
-    "annualized_ret": 0.1554,
+    "total_return": 0.0765,
+    "annualized_ret": 0.2237,
     "max_drawdown": -0.0888,
-    "annualized_vol": 0.1373,
-    "sharpe": 0.767
+    "annualized_vol": 0.1368,
+    "sharpe": 1.27
   },
   "paper_trading": {
-    "portfolio_value": 10425.82,
-    "spy_value": 10773.58
+    "portfolio_value": 10443.85,
+    "spy_value": 10771.16
   },
   "golden_cross": {
     "LVMUY": "bullish",
     "RL": "bullish",
     "TPR": "bullish",
     "NKE": "bearish",
-    "LULU": "neutral",
+    "LULU": "bearish",
     "EL": "bullish",
     "ULTA": "bullish",
     "ELF": "neutral",
@@ -90,7 +90,7 @@
     "IHRT": "bullish",
     "SIRI": "bullish",
     "UNH": "bullish",
-    "JNJ": "neutral",
+    "JNJ": "bearish",
     "LLY": "neutral",
     "PFE": "neutral",
     "ABBV": "neutral",
