@@ -349,7 +349,7 @@
   <header>
     <div class="header-top">
       <div class="title-block">
-        <h1>🎶 <span>Coachella &amp; Glamour</span><br>Portfolio Optimizer</h1>
+        <h1>💄 <span>Tech &amp; Glamour</span><br>Portfolio Optimizer</h1>
         <div class="subtitle">OPIM 5641 · Modern Portfolio Theory · UConn</div>
         <div class="badge-row">
           <span class="badge badge-gold">MPT + Binary Constraints</span>
@@ -575,8 +575,135 @@ async function load() {
     </footer>
   `;
 }
-
 load();
+
 </script>
+
+<!-- ========================= -->
+<!-- 🔥 AI CHAT SECTION -->
+<!-- ========================= -->
+
+<div class="card fade-in" style="margin-top:28px;">
+  <div class="card-title">AI Chart Explainer</div>
+
+  <p style="font-size:13px;color:var(--muted);line-height:1.6;">
+    Ask anything like: "What does the paper trading chart mean?" or "Is this portfolio risky?"
+  </p>
+
+  <div id="ai-output" style="
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px;
+    min-height:120px;
+    font-size:13px;
+    margin-top:12px;">
+    Hi bestie ✨ ask me about any chart and I'll explain it for you
+  </div>
+
+  <div style="display:flex; gap:8px; margin-top:10px;">
+    <input id="ai-question"
+      placeholder="Ask about a chart..."
+      style="flex:1; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text);">
+
+    <button onclick="askDashboardAI()"
+      style="padding:10px 14px; border-radius:8px; border:1px solid var(--accent2); background:rgba(192,132,252,0.15); color:var(--text); cursor:pointer;">
+      Ask
+    </button>
+  </div>
+</div>
+
+</div> <!-- end .wrap -->
+
+<script>
+  const DIFY_API_KEY = "app-wsu0mVY0tWvP7vy5lfIt9zIt";
+
+  async function buildDashboardContext() {
+    try {
+      const r = await fetch("results/latest.json?t=" + Date.now());
+      const data = await r.json();
+
+      return `
+CURRENT DASHBOARD RESULTS:
+Run date: ${data.run_date}
+Sharpe ratio: ${Number(data.sharpe).toFixed(3)}
+Annual return: ${(data.ann_return * 100).toFixed(2)}%
+Risk: ${(data.ann_risk * 100).toFixed(2)}%
+VIX: ${data.vix}
+
+Portfolio value: $${Number(data.paper_trading?.portfolio_value || 10000).toLocaleString()}
+SPY value: $${Number(data.paper_trading?.spy_value || 10000).toLocaleString()}
+
+Charts:
+- Paper trading = portfolio vs SPY over time
+- Efficient frontier = risk vs return
+- Pie chart = allocation
+- Weight history = how weights change
+- VIX = market fear
+- Golden cross = momentum
+
+Explain simply, fun, Gen Z girly tone, no bad words.
+No financial advice. Use "this suggests" language.
+      `;
+    } catch (err) {
+      return "Dashboard data could not be loaded.";
+    }
+  }
+
+  async function askDashboardAI() {
+    const questionInput = document.getElementById("ai-question");
+    const output = document.getElementById("ai-output");
+
+    const question = questionInput.value.trim();
+    if (!question) return;
+
+    output.innerHTML = "Thinking bestie... ✨";
+
+    try {
+      const context = await buildDashboardContext();
+
+      const res = await fetch("https://api.dify.ai/v1/chat-messages", {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + DIFY_API_KEY,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          inputs: {},
+          query: context + "\nUSER QUESTION: " + question,
+          response_mode: "blocking",
+          user: "dashboard-user"
+        })
+      });
+
+      const result = await res.json();
+
+      function formatAI(text) {
+  return text
+    .replace(/### (.*)/g, "<h3>$1</h3>")
+    .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
+    .replace(/- (.*)/g, "<li>$1</li>")
+    .replace(/\n/g, "<br>");
+}
+
+// ✅ THIS LINE IS WHAT YOU WERE MISSING
+output.innerHTML = formatAI(result.answer || "No response");
+
+    } catch (err) {
+      output.innerHTML = "Oops something broke 😭";
+      console.error(err);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("ai-question");
+    if (input) {
+      input.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") askDashboardAI();
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
