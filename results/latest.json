@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-05-22",
+  "run_date": "2026-05-25",
   "mode": "max_sharpe",
-  "vix": 16.76,
+  "vix": 16.7,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -36,42 +36,42 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.3329
+      "weight": 0.3379
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.0546
+      "weight": 0.0762
     },
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.2357
+      "weight": 0.2081
+    },
+    "Apple": {
+      "ticker": "AAPL",
+      "sector": "Tech",
+      "weight": 0.0511
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0768
-    },
-    "Alphabet": {
-      "ticker": "GOOGL",
-      "sector": "Tech",
-      "weight": 0.05
+      "weight": 0.0767
     }
   },
-  "ann_return": 0.5245,
-  "ann_risk": 0.1644,
-  "sharpe": 2.8857,
+  "ann_return": 0.5372,
+  "ann_risk": 0.1664,
+  "sharpe": 2.9287,
   "spy": {
-    "total_return": 0.08,
-    "annualized_ret": 0.2292,
+    "total_return": 0.0755,
+    "annualized_ret": 0.2208,
     "max_drawdown": -0.0888,
-    "annualized_vol": 0.1391,
-    "sharpe": 1.288
+    "annualized_vol": 0.1404,
+    "sharpe": 1.217
   },
   "paper_trading": {
-    "portfolio_value": 10476.02,
-    "spy_value": 11324.89
+    "portfolio_value": 10462.45,
+    "spy_value": 11030.01
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -83,11 +83,11 @@
     "ULTA": "bearish",
     "ELF": "bearish",
     "COTY": "bearish",
-    "IPAR": "neutral",
+    "IPAR": "bearish",
     "LYV": "bullish",
     "WMG": "bullish",
     "SPOT": "bearish",
-    "IHRT": "bullish",
+    "IHRT": "neutral",
     "SIRI": "bullish",
     "UNH": "bullish",
     "JNJ": "neutral",
@@ -95,7 +95,7 @@
     "PFE": "neutral",
     "ABBV": "bullish",
     "AAPL": "bullish",
-    "MSFT": "bullish",
+    "MSFT": "neutral",
     "NVDA": "bullish",
     "META": "bearish",
     "GOOGL": "bullish"
