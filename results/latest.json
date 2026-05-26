@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-05-25",
+  "run_date": "2026-05-26",
   "mode": "max_sharpe",
-  "vix": 16.7,
+  "vix": 16.59,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
