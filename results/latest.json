@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-05-26",
+  "run_date": "2026-05-27",
   "mode": "max_sharpe",
-  "vix": 16.59,
+  "vix": 17.01,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -28,50 +28,50 @@
       "sector": "Beauty",
       "weight": 0.05
     },
-    "Live Nation": {
-      "ticker": "LYV",
+    "iHeartMedia": {
+      "ticker": "IHRT",
       "sector": "Music",
       "weight": 0.05
     },
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.3379
+      "weight": 0.3974
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.0762
+      "weight": 0.05
     },
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.2081
-    },
-    "Apple": {
-      "ticker": "AAPL",
-      "sector": "Tech",
-      "weight": 0.0511
+      "weight": 0.1649
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0767
+      "weight": 0.0876
+    },
+    "Alphabet": {
+      "ticker": "GOOGL",
+      "sector": "Tech",
+      "weight": 0.05
     }
   },
-  "ann_return": 0.5372,
-  "ann_risk": 0.1664,
-  "sharpe": 2.9287,
+  "ann_return": 0.626,
+  "ann_risk": 0.1907,
+  "sharpe": 3.0202,
   "spy": {
-    "total_return": 0.0755,
-    "annualized_ret": 0.2208,
+    "total_return": 0.0827,
+    "annualized_ret": 0.2402,
     "max_drawdown": -0.0888,
-    "annualized_vol": 0.1404,
-    "sharpe": 1.217
+    "annualized_vol": 0.1399,
+    "sharpe": 1.359
   },
   "paper_trading": {
-    "portfolio_value": 10462.45,
-    "spy_value": 11030.01
+    "portfolio_value": 10480.4,
+    "spy_value": 11103.24
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -83,14 +83,14 @@
     "ULTA": "bearish",
     "ELF": "bearish",
     "COTY": "bearish",
-    "IPAR": "bearish",
+    "IPAR": "neutral",
     "LYV": "bullish",
     "WMG": "bullish",
-    "SPOT": "bearish",
+    "SPOT": "neutral",
     "IHRT": "neutral",
     "SIRI": "bullish",
     "UNH": "bullish",
-    "JNJ": "neutral",
+    "JNJ": "bullish",
     "LLY": "bullish",
     "PFE": "neutral",
     "ABBV": "bullish",
