@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-05-28",
+  "run_date": "2026-05-29",
   "mode": "max_sharpe",
-  "vix": 16.29,
+  "vix": 15.74,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -41,41 +41,41 @@
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.0813
+      "weight": 0.0894
     },
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.1419
+      "weight": 0.05
+    },
+    "Apple": {
+      "ticker": "AAPL",
+      "sector": "Tech",
+      "weight": 0.1099
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0768
-    },
-    "Alphabet": {
-      "ticker": "GOOGL",
-      "sector": "Tech",
-      "weight": 0.05
+      "weight": 0.1007
     }
   },
-  "ann_return": 0.6424,
-  "ann_risk": 0.1928,
-  "sharpe": 3.0723,
+  "ann_return": 0.6637,
+  "ann_risk": 0.1993,
+  "sharpe": 3.0795,
   "spy": {
-    "total_return": 0.0847,
-    "annualized_ret": 0.2464,
+    "total_return": 0.096,
+    "annualized_ret": 0.2821,
     "max_drawdown": -0.0888,
-    "annualized_vol": 0.1398,
-    "sharpe": 1.404
+    "annualized_vol": 0.1397,
+    "sharpe": 1.661
   },
   "paper_trading": {
-    "portfolio_value": 10590.32,
-    "spy_value": 11037.64
+    "portfolio_value": 10621.67,
+    "spy_value": 11105.88
   },
   "golden_cross": {
-    "LVMUY": "neutral",
-    "RL": "bearish",
+    "LVMUY": "bullish",
+    "RL": "neutral",
     "TPR": "bearish",
     "NKE": "neutral",
     "LULU": "bearish",
@@ -86,8 +86,8 @@
     "IPAR": "neutral",
     "LYV": "bullish",
     "WMG": "bullish",
-    "SPOT": "neutral",
-    "IHRT": "neutral",
+    "SPOT": "bullish",
+    "IHRT": "bearish",
     "SIRI": "bullish",
     "UNH": "bullish",
     "JNJ": "bullish",
@@ -95,9 +95,9 @@
     "PFE": "neutral",
     "ABBV": "bullish",
     "AAPL": "bullish",
-    "MSFT": "neutral",
+    "MSFT": "bullish",
     "NVDA": "bullish",
-    "META": "bearish",
+    "META": "neutral",
     "GOOGL": "bullish"
   }
 }
