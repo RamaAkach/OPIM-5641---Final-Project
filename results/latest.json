@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-06-10",
+  "run_date": "2026-06-11",
   "mode": "max_sharpe",
-  "vix": 19.87,
+  "vix": 22.22,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -18,8 +18,8 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Estee Lauder": {
-      "ticker": "EL",
+    "Ulta Beauty": {
+      "ticker": "ULTA",
       "sector": "Beauty",
       "weight": 0.05
     },
@@ -36,42 +36,42 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.4
+      "weight": 0.2426
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.1341
+      "weight": 0.3574
     },
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.0882
+      "weight": 0.05
     },
     "Apple": {
       "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.0669
+      "weight": 0.05
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0608
+      "weight": 0.05
     }
   },
-  "ann_return": 0.5491,
-  "ann_risk": 0.1881,
-  "sharpe": 2.6528,
+  "ann_return": 0.6756,
+  "ann_risk": 0.169,
+  "sharpe": 3.7025,
   "spy": {
-    "total_return": 0.0669,
-    "annualized_ret": 0.1895,
+    "total_return": 0.0459,
+    "annualized_ret": 0.1278,
     "max_drawdown": -0.0888,
-    "annualized_vol": 0.1409,
-    "sharpe": 0.99
+    "annualized_vol": 0.1434,
+    "sharpe": 0.543
   },
   "paper_trading": {
-    "portfolio_value": 10201.38,
-    "spy_value": 10468.27
+    "portfolio_value": 9866.01,
+    "spy_value": 10199.94
   },
   "golden_cross": {
     "LVMUY": "bullish",
@@ -85,7 +85,7 @@
     "COTY": "bearish",
     "IPAR": "bullish",
     "LYV": "bullish",
-    "WMG": "neutral",
+    "WMG": "bearish",
     "SPOT": "bullish",
     "IHRT": "bearish",
     "SIRI": "bullish",
@@ -98,6 +98,6 @@
     "MSFT": "bullish",
     "NVDA": "neutral",
     "META": "neutral",
-    "GOOGL": "neutral"
+    "GOOGL": "bearish"
   }
 }
