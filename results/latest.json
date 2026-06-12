@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-06-11",
+  "run_date": "2026-06-12",
   "mode": "max_sharpe",
-  "vix": 22.22,
+  "vix": 19.44,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -36,15 +36,15 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2426
+      "weight": 0.2642
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3574
+      "weight": 0.3358
     },
-    "Johnson & J": {
-      "ticker": "JNJ",
+    "Eli Lilly": {
+      "ticker": "LLY",
       "sector": "Healthcare",
       "weight": 0.05
     },
@@ -60,18 +60,18 @@
     }
   },
   "ann_return": 0.6756,
-  "ann_risk": 0.169,
-  "sharpe": 3.7025,
+  "ann_risk": 0.1716,
+  "sharpe": 3.6451,
   "spy": {
-    "total_return": 0.0459,
-    "annualized_ret": 0.1278,
+    "total_return": 0.0638,
+    "annualized_ret": 0.1803,
     "max_drawdown": -0.0888,
-    "annualized_vol": 0.1434,
-    "sharpe": 0.543
+    "annualized_vol": 0.1459,
+    "sharpe": 0.893
   },
   "paper_trading": {
-    "portfolio_value": 9866.01,
-    "spy_value": 10199.94
+    "portfolio_value": 9939.8,
+    "spy_value": 10413.72
   },
   "golden_cross": {
     "LVMUY": "bullish",
