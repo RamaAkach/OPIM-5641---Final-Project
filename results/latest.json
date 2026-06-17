@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-06-12",
+  "run_date": "2026-06-17",
   "mode": "max_sharpe",
-  "vix": 19.44,
+  "vix": 16.41,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -18,8 +18,8 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Ulta Beauty": {
-      "ticker": "ULTA",
+    "e.l.f. Beauty": {
+      "ticker": "ELF",
       "sector": "Beauty",
       "weight": 0.05
     },
@@ -36,15 +36,15 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2642
+      "weight": 0.25
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3358
+      "weight": 0.35
     },
-    "Eli Lilly": {
-      "ticker": "LLY",
+    "Johnson & J": {
+      "ticker": "JNJ",
       "sector": "Healthcare",
       "weight": 0.05
     },
@@ -59,29 +59,29 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.6756,
-  "ann_risk": 0.1716,
-  "sharpe": 3.6451,
+  "ann_return": 0.7131,
+  "ann_risk": 0.1726,
+  "sharpe": 3.8411,
   "spy": {
-    "total_return": 0.0638,
-    "annualized_ret": 0.1803,
-    "max_drawdown": -0.0888,
-    "annualized_vol": 0.1459,
-    "sharpe": 0.893
+    "total_return": 0.0819,
+    "annualized_ret": 0.235,
+    "max_drawdown": -0.0887,
+    "annualized_vol": 0.1488,
+    "sharpe": 1.243
   },
   "paper_trading": {
-    "portfolio_value": 9939.8,
-    "spy_value": 10413.72
+    "portfolio_value": 10151.8,
+    "spy_value": 10542.93
   },
   "golden_cross": {
     "LVMUY": "bullish",
     "RL": "bullish",
     "TPR": "bullish",
     "NKE": "bullish",
-    "LULU": "neutral",
+    "LULU": "bearish",
     "EL": "bullish",
     "ULTA": "bearish",
-    "ELF": "bearish",
+    "ELF": "bullish",
     "COTY": "bearish",
     "IPAR": "bullish",
     "LYV": "bullish",
@@ -92,10 +92,10 @@
     "UNH": "bullish",
     "JNJ": "bullish",
     "LLY": "bullish",
-    "PFE": "neutral",
+    "PFE": "bullish",
     "ABBV": "bullish",
-    "AAPL": "bullish",
-    "MSFT": "bullish",
+    "AAPL": "neutral",
+    "MSFT": "neutral",
     "NVDA": "neutral",
     "META": "neutral",
     "GOOGL": "bearish"
