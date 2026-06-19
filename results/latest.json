@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-06-18",
+  "run_date": "2026-06-19",
   "mode": "max_sharpe",
-  "vix": 18.44,
+  "vix": 16.4,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -18,8 +18,8 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Estee Lauder": {
-      "ticker": "EL",
+    "e.l.f. Beauty": {
+      "ticker": "ELF",
       "sector": "Beauty",
       "weight": 0.05
     },
@@ -36,15 +36,15 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2832
+      "weight": 0.2366
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3168
+      "weight": 0.3634
     },
-    "Eli Lilly": {
-      "ticker": "LLY",
+    "Johnson & J": {
+      "ticker": "JNJ",
       "sector": "Healthcare",
       "weight": 0.05
     },
@@ -59,19 +59,19 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.7048,
-  "ann_risk": 0.1763,
-  "sharpe": 3.7142,
+  "ann_return": 0.7115,
+  "ann_risk": 0.1746,
+  "sharpe": 3.7884,
   "spy": {
-    "total_return": 0.0775,
-    "annualized_ret": 0.2216,
+    "total_return": 0.094,
+    "annualized_ret": 0.2724,
     "max_drawdown": -0.0868,
-    "annualized_vol": 0.1496,
-    "sharpe": 1.147
+    "annualized_vol": 0.1501,
+    "sharpe": 1.481
   },
   "paper_trading": {
-    "portfolio_value": 9965.08,
-    "spy_value": 10412.88
+    "portfolio_value": NaN,
+    "spy_value": 10417.5
   },
   "golden_cross": {
     "LVMUY": "bullish",
