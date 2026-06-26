@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-06-25",
+  "run_date": "2026-06-26",
   "mode": "max_sharpe",
-  "vix": 18.63,
+  "vix": 18.89,
   "window_days": 60,
   "n_stocks_selected": 9,
   "n_stocks_pool": 25,
@@ -54,19 +54,19 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.7043,
-  "ann_risk": 0.1703,
-  "sharpe": 3.842,
+  "ann_return": 0.6629,
+  "ann_risk": 0.1676,
+  "sharpe": 3.6574,
   "spy": {
-    "total_return": 0.065,
-    "annualized_ret": 0.1862,
+    "total_return": 0.0668,
+    "annualized_ret": 0.1916,
     "max_drawdown": -0.0858,
     "annualized_vol": 0.1483,
-    "sharpe": 0.918
+    "sharpe": 0.955
   },
   "paper_trading": {
-    "portfolio_value": 9916.83,
-    "spy_value": 10017.7
+    "portfolio_value": 9993.42,
+    "spy_value": 10063.04
   },
   "golden_cross": {
     "LVMUY": "bullish",
