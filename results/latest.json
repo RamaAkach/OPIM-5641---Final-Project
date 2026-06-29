@@ -1,9 +1,9 @@
 {
-  "run_date": "2026-06-26",
+  "run_date": "2026-06-29",
   "mode": "max_sharpe",
-  "vix": 18.89,
+  "vix": 18.41,
   "window_days": 60,
-  "n_stocks_selected": 9,
+  "n_stocks_selected": 10,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
@@ -18,8 +18,8 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "e.l.f. Beauty": {
-      "ticker": "ELF",
+    "Coty": {
+      "ticker": "COTY",
       "sector": "Beauty",
       "weight": 0.05
     },
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2
+      "weight": 0.2234
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.4
+      "weight": 0.3766
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -52,36 +52,41 @@
       "ticker": "AAPL",
       "sector": "Tech",
       "weight": 0.05
+    },
+    "Nvidia": {
+      "ticker": "NVDA",
+      "sector": "Tech",
+      "weight": 0.05
     }
   },
-  "ann_return": 0.6629,
-  "ann_risk": 0.1676,
-  "sharpe": 3.6574,
+  "ann_return": 0.6999,
+  "ann_risk": 0.1723,
+  "sharpe": 3.7712,
   "spy": {
-    "total_return": 0.0668,
-    "annualized_ret": 0.1916,
+    "total_return": 0.0732,
+    "annualized_ret": 0.2162,
     "max_drawdown": -0.0858,
-    "annualized_vol": 0.1483,
-    "sharpe": 0.955
+    "annualized_vol": 0.1481,
+    "sharpe": 1.123
   },
   "paper_trading": {
-    "portfolio_value": 9993.42,
-    "spy_value": 10063.04
+    "portfolio_value": 10244.21,
+    "spy_value": 9900.95
   },
   "golden_cross": {
     "LVMUY": "bullish",
     "RL": "bullish",
     "TPR": "bullish",
-    "NKE": "bullish",
+    "NKE": "neutral",
     "LULU": "bearish",
     "EL": "bullish",
-    "ULTA": "bearish",
+    "ULTA": "neutral",
     "ELF": "bullish",
     "COTY": "neutral",
     "IPAR": "bullish",
     "LYV": "bullish",
     "WMG": "bearish",
-    "SPOT": "neutral",
+    "SPOT": "bearish",
     "IHRT": "bearish",
     "SIRI": "neutral",
     "UNH": "bullish",
