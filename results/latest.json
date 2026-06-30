@@ -1,9 +1,9 @@
 {
-  "run_date": "2026-06-29",
+  "run_date": "2026-06-30",
   "mode": "max_sharpe",
-  "vix": 18.41,
+  "vix": 17.65,
   "window_days": 60,
-  "n_stocks_selected": 10,
+  "n_stocks_selected": 9,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2234
+      "weight": 0.247
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3766
+      "weight": 0.353
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -52,26 +52,21 @@
       "ticker": "AAPL",
       "sector": "Tech",
       "weight": 0.05
-    },
-    "Nvidia": {
-      "ticker": "NVDA",
-      "sector": "Tech",
-      "weight": 0.05
     }
   },
-  "ann_return": 0.6999,
-  "ann_risk": 0.1723,
-  "sharpe": 3.7712,
+  "ann_return": 0.6843,
+  "ann_risk": 0.1651,
+  "sharpe": 3.8416,
   "spy": {
-    "total_return": 0.0732,
-    "annualized_ret": 0.2162,
+    "total_return": 0.0909,
+    "annualized_ret": 0.2692,
     "max_drawdown": -0.0858,
-    "annualized_vol": 0.1481,
-    "sharpe": 1.123
+    "annualized_vol": 0.1495,
+    "sharpe": 1.466
   },
   "paper_trading": {
-    "portfolio_value": 10244.21,
-    "spy_value": 9900.95
+    "portfolio_value": 10215.51,
+    "spy_value": 10064.06
   },
   "golden_cross": {
     "LVMUY": "bullish",
@@ -79,7 +74,7 @@
     "TPR": "bullish",
     "NKE": "neutral",
     "LULU": "bearish",
-    "EL": "bullish",
+    "EL": "neutral",
     "ULTA": "neutral",
     "ELF": "bullish",
     "COTY": "neutral",
@@ -88,7 +83,7 @@
     "WMG": "bearish",
     "SPOT": "bearish",
     "IHRT": "bearish",
-    "SIRI": "neutral",
+    "SIRI": "bullish",
     "UNH": "bullish",
     "JNJ": "bullish",
     "LLY": "bullish",
