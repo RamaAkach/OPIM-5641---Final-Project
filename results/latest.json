@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-07-02",
+  "run_date": "2026-07-03",
   "mode": "max_sharpe",
-  "vix": 16.59,
+  "vix": 16.15,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2616
+      "weight": 0.2685
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3384
+      "weight": 0.3315
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -59,42 +59,42 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.7578,
-  "ann_risk": 0.172,
-  "sharpe": 4.1151,
+  "ann_return": 0.7807,
+  "ann_risk": 0.1723,
+  "sharpe": 4.2397,
   "spy": {
-    "total_return": 0.0979,
-    "annualized_ret": 0.2846,
+    "total_return": 0.091,
+    "annualized_ret": 0.263,
     "max_drawdown": -0.0858,
-    "annualized_vol": 0.1484,
-    "sharpe": 1.581
+    "annualized_vol": 0.1483,
+    "sharpe": 1.436
   },
   "paper_trading": {
-    "portfolio_value": 10414.15,
-    "spy_value": 10128.71
+    "portfolio_value": 10425.32,
+    "spy_value": 10059.12
   },
   "golden_cross": {
-    "LVMUY": "bullish",
+    "LVMUY": "neutral",
     "RL": "bullish",
     "TPR": "bullish",
     "NKE": "bearish",
     "LULU": "bearish",
     "EL": "neutral",
-    "ULTA": "bearish",
+    "ULTA": "neutral",
     "ELF": "bullish",
-    "COTY": "neutral",
+    "COTY": "bullish",
     "IPAR": "bullish",
     "LYV": "bullish",
     "WMG": "bearish",
     "SPOT": "bearish",
-    "IHRT": "bearish",
+    "IHRT": "neutral",
     "SIRI": "bullish",
     "UNH": "bullish",
     "JNJ": "bullish",
     "LLY": "bullish",
     "PFE": "bearish",
     "ABBV": "bullish",
-    "AAPL": "bearish",
+    "AAPL": "neutral",
     "MSFT": "bearish",
     "NVDA": "bearish",
     "META": "bearish",
