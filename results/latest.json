@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-07-09",
+  "run_date": "2026-07-10",
   "mode": "max_sharpe",
-  "vix": 16.9,
+  "vix": 15.84,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2356
+      "weight": 0.2493
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3644
+      "weight": 0.3507
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -53,32 +53,32 @@
       "sector": "Tech",
       "weight": 0.05
     },
-    "Nvidia": {
-      "ticker": "NVDA",
+    "Alphabet": {
+      "ticker": "GOOGL",
       "sector": "Tech",
       "weight": 0.05
     }
   },
-  "ann_return": 0.7879,
-  "ann_risk": 0.1708,
-  "sharpe": 4.3198,
+  "ann_return": 0.7907,
+  "ann_risk": 0.1728,
+  "sharpe": 4.2858,
   "spy": {
     "total_return": 0.0902,
-    "annualized_ret": 0.2637,
+    "annualized_ret": 0.2638,
     "max_drawdown": -0.0858,
     "annualized_vol": 0.1481,
-    "sharpe": 1.443
+    "sharpe": 1.444
   },
   "paper_trading": {
-    "portfolio_value": 10678.78,
-    "spy_value": 10185.22
+    "portfolio_value": 10671.41,
+    "spy_value": 10167.24
   },
   "golden_cross": {
     "LVMUY": "neutral",
     "RL": "bullish",
     "TPR": "bullish",
     "NKE": "bearish",
-    "LULU": "bearish",
+    "LULU": "neutral",
     "EL": "bearish",
     "ULTA": "neutral",
     "ELF": "bullish",
