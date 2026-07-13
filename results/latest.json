@@ -1,20 +1,20 @@
 {
-  "run_date": "2026-07-10",
+  "run_date": "2026-07-13",
   "mode": "max_sharpe",
-  "vix": 15.84,
+  "vix": 15.03,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
   "allocation": {
-    "Ralph Lauren": {
-      "ticker": "RL",
+    "LVMH": {
+      "ticker": "LVMUY",
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Tapestry": {
-      "ticker": "TPR",
+    "Ralph Lauren": {
+      "ticker": "RL",
       "sector": "Fashion",
       "weight": 0.05
     },
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2493
+      "weight": 0.2518
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3507
+      "weight": 0.3482
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -53,39 +53,39 @@
       "sector": "Tech",
       "weight": 0.05
     },
-    "Alphabet": {
-      "ticker": "GOOGL",
+    "Nvidia": {
+      "ticker": "NVDA",
       "sector": "Tech",
       "weight": 0.05
     }
   },
-  "ann_return": 0.7907,
-  "ann_risk": 0.1728,
-  "sharpe": 4.2858,
+  "ann_return": 0.7474,
+  "ann_risk": 0.1716,
+  "sharpe": 4.0646,
   "spy": {
-    "total_return": 0.0902,
-    "annualized_ret": 0.2638,
-    "max_drawdown": -0.0858,
-    "annualized_vol": 0.1481,
-    "sharpe": 1.444
+    "total_return": 0.1057,
+    "annualized_ret": 0.321,
+    "max_drawdown": -0.0768,
+    "annualized_vol": 0.1491,
+    "sharpe": 1.817
   },
   "paper_trading": {
-    "portfolio_value": 10671.41,
-    "spy_value": 10167.24
+    "portfolio_value": 10343.68,
+    "spy_value": 10084.0
   },
   "golden_cross": {
     "LVMUY": "neutral",
     "RL": "bullish",
-    "TPR": "bullish",
-    "NKE": "bearish",
+    "TPR": "neutral",
+    "NKE": "neutral",
     "LULU": "neutral",
-    "EL": "bearish",
+    "EL": "neutral",
     "ULTA": "neutral",
     "ELF": "bullish",
     "COTY": "bullish",
     "IPAR": "bullish",
     "LYV": "bullish",
-    "WMG": "bearish",
+    "WMG": "neutral",
     "SPOT": "neutral",
     "IHRT": "bullish",
     "SIRI": "bullish",
@@ -94,10 +94,10 @@
     "LLY": "bullish",
     "PFE": "bearish",
     "ABBV": "bullish",
-    "AAPL": "neutral",
+    "AAPL": "bullish",
     "MSFT": "bearish",
     "NVDA": "bearish",
-    "META": "neutral",
+    "META": "bullish",
     "GOOGL": "neutral"
   }
 }
