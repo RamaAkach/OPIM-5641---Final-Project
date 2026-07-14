@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-07-13",
+  "run_date": "2026-07-14",
   "mode": "max_sharpe",
-  "vix": 15.03,
+  "vix": 17.16,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2518
+      "weight": 0.2507
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3482
+      "weight": 0.3493
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -59,19 +59,19 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.7474,
-  "ann_risk": 0.1716,
-  "sharpe": 4.0646,
+  "ann_return": 0.7457,
+  "ann_risk": 0.1707,
+  "sharpe": 4.0764,
   "spy": {
-    "total_return": 0.1057,
-    "annualized_ret": 0.321,
+    "total_return": 0.0973,
+    "annualized_ret": 0.2895,
     "max_drawdown": -0.0768,
-    "annualized_vol": 0.1491,
-    "sharpe": 1.817
+    "annualized_vol": 0.149,
+    "sharpe": 1.608
   },
   "paper_trading": {
-    "portfolio_value": 10343.68,
-    "spy_value": 10084.0
+    "portfolio_value": 10339.47,
+    "spy_value": 10006.79
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -95,8 +95,8 @@
     "PFE": "bearish",
     "ABBV": "bullish",
     "AAPL": "bullish",
-    "MSFT": "bearish",
-    "NVDA": "bearish",
+    "MSFT": "neutral",
+    "NVDA": "neutral",
     "META": "bullish",
     "GOOGL": "neutral"
   }
