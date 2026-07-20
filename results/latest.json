@@ -1,20 +1,20 @@
 {
-  "run_date": "2026-07-17",
+  "run_date": "2026-07-20",
   "mode": "max_sharpe",
-  "vix": 16.73,
+  "vix": 18.77,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
   "allocation": {
-    "LVMH": {
-      "ticker": "LVMUY",
+    "Ralph Lauren": {
+      "ticker": "RL",
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Ralph Lauren": {
-      "ticker": "RL",
+    "Tapestry": {
+      "ticker": "TPR",
       "sector": "Fashion",
       "weight": 0.05
     },
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2025
+      "weight": 0.2041
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3396
+      "weight": 0.3374
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -51,7 +51,7 @@
     "Apple": {
       "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.1079
+      "weight": 0.1084
     },
     "Nvidia": {
       "ticker": "NVDA",
@@ -59,19 +59,19 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.7555,
-  "ann_risk": 0.1658,
-  "sharpe": 4.254,
+  "ann_return": 0.8226,
+  "ann_risk": 0.1641,
+  "sharpe": 4.7074,
   "spy": {
-    "total_return": 0.1016,
-    "annualized_ret": 0.2996,
-    "max_drawdown": -0.0751,
-    "annualized_vol": 0.1474,
-    "sharpe": 1.693
+    "total_return": 0.1017,
+    "annualized_ret": 0.3076,
+    "max_drawdown": -0.0657,
+    "annualized_vol": 0.1473,
+    "sharpe": 1.748
   },
   "paper_trading": {
-    "portfolio_value": 10354.12,
-    "spy_value": 9974.21
+    "portfolio_value": 10689.2,
+    "spy_value": 9810.88
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -87,7 +87,7 @@
     "LYV": "bullish",
     "WMG": "bullish",
     "SPOT": "bullish",
-    "IHRT": "bullish",
+    "IHRT": "neutral",
     "SIRI": "bullish",
     "UNH": "bullish",
     "JNJ": "bullish",
@@ -96,7 +96,7 @@
     "ABBV": "bullish",
     "AAPL": "bullish",
     "MSFT": "bullish",
-    "NVDA": "neutral",
+    "NVDA": "bullish",
     "META": "bullish",
     "GOOGL": "bullish"
   }
