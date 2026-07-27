@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-07-24",
+  "run_date": "2026-07-27",
   "mode": "max_sharpe",
   "vix": 18.7,
   "window_days": 60,
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2074
+      "weight": 0.1676
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3663
+      "weight": 0.3447
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -51,7 +51,7 @@
     "Apple": {
       "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.0763
+      "weight": 0.1376
     },
     "Nvidia": {
       "ticker": "NVDA",
@@ -59,19 +59,19 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.7646,
-  "ann_risk": 0.17,
-  "sharpe": 4.203,
+  "ann_return": 0.8009,
+  "ann_risk": 0.1623,
+  "sharpe": 4.6279,
   "spy": {
-    "total_return": 0.0972,
-    "annualized_ret": 0.2859,
-    "max_drawdown": -0.063,
-    "annualized_vol": 0.1479,
-    "sharpe": 1.595
+    "total_return": 0.1092,
+    "annualized_ret": 0.3368,
+    "max_drawdown": -0.0553,
+    "annualized_vol": 0.1466,
+    "sharpe": 1.956
   },
   "paper_trading": {
-    "portfolio_value": 10415.38,
-    "spy_value": 9775.35
+    "portfolio_value": 10323.9,
+    "spy_value": 10041.13
   },
   "golden_cross": {
     "LVMUY": "neutral",
