@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-07-30",
+  "run_date": "2026-07-31",
   "mode": "max_sharpe",
-  "vix": 20.66,
+  "vix": 17.09,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -26,7 +26,7 @@
     "Inter Parfums": {
       "ticker": "IPAR",
       "sector": "Beauty",
-      "weight": 0.05
+      "weight": 0.0709
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.2083
+      "weight": 0.146
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.2998
+      "weight": 0.314
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -51,7 +51,7 @@
     "Apple": {
       "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.1419
+      "weight": 0.1691
     },
     "Nvidia": {
       "ticker": "NVDA",
@@ -59,33 +59,33 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.8401,
-  "ann_risk": 0.1605,
-  "sharpe": 4.9219,
+  "ann_return": 0.842,
+  "ann_risk": 0.1593,
+  "sharpe": 4.9713,
   "spy": {
-    "total_return": 0.0932,
-    "annualized_ret": 0.2732,
-    "max_drawdown": -0.0553,
-    "annualized_vol": 0.1468,
-    "sharpe": 1.521
+    "total_return": 0.1273,
+    "annualized_ret": 0.3836,
+    "max_drawdown": -0.0449,
+    "annualized_vol": 0.1469,
+    "sharpe": 2.271
   },
   "paper_trading": {
-    "portfolio_value": 10733.56,
-    "spy_value": 10081.46
+    "portfolio_value": 10493.08,
+    "spy_value": 10079.17
   },
   "golden_cross": {
     "LVMUY": "neutral",
     "RL": "neutral",
-    "TPR": "neutral",
+    "TPR": "bullish",
     "NKE": "neutral",
     "LULU": "bullish",
-    "EL": "neutral",
+    "EL": "bullish",
     "ULTA": "bullish",
     "ELF": "bullish",
     "COTY": "bullish",
     "IPAR": "bullish",
     "LYV": "bullish",
-    "WMG": "bullish",
+    "WMG": "neutral",
     "SPOT": "bullish",
     "IHRT": "bearish",
     "SIRI": "bullish",
@@ -96,7 +96,7 @@
     "ABBV": "bullish",
     "AAPL": "bullish",
     "MSFT": "bullish",
-    "NVDA": "bullish",
+    "NVDA": "neutral",
     "META": "bullish",
     "GOOGL": "bearish"
   }
