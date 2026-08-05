@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-08-04",
+  "run_date": "2026-08-05",
   "mode": "max_sharpe",
-  "vix": 15.86,
+  "vix": 16.5,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -26,7 +26,7 @@
     "Inter Parfums": {
       "ticker": "IPAR",
       "sector": "Beauty",
-      "weight": 0.069
+      "weight": 0.0905
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -36,12 +36,12 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.1765
+      "weight": 0.1769
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3781
+      "weight": 0.3516
     },
     "Johnson & J": {
       "ticker": "JNJ",
@@ -56,22 +56,22 @@
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.0763
+      "weight": 0.081
     }
   },
-  "ann_return": 0.9123,
-  "ann_risk": 0.1714,
-  "sharpe": 5.0294,
+  "ann_return": 0.9009,
+  "ann_risk": 0.1691,
+  "sharpe": 5.0326,
   "spy": {
-    "total_return": 0.1591,
-    "annualized_ret": 0.4983,
+    "total_return": 0.18,
+    "annualized_ret": 0.5658,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1462,
-    "sharpe": 3.065
+    "annualized_vol": 0.1479,
+    "sharpe": 3.486
   },
   "paper_trading": {
-    "portfolio_value": 10290.6,
-    "spy_value": 10123.84
+    "portfolio_value": 10398.18,
+    "spy_value": 10306.36
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -89,15 +89,15 @@
     "SPOT": "bullish",
     "IHRT": "bearish",
     "SIRI": "bullish",
-    "UNH": "bullish",
+    "UNH": "neutral",
     "JNJ": "bullish",
-    "LLY": "bullish",
+    "LLY": "neutral",
     "PFE": "bullish",
     "ABBV": "bullish",
     "AAPL": "bullish",
     "MSFT": "bullish",
     "NVDA": "bullish",
     "META": "neutral",
-    "GOOGL": "bearish"
+    "GOOGL": "neutral"
   }
 }
