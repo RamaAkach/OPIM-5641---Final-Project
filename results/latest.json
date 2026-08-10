@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-08-07",
+  "run_date": "2026-08-10",
   "mode": "max_sharpe",
-  "vix": 15.15,
+  "vix": 14.9,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -18,10 +18,10 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Coty": {
-      "ticker": "COTY",
+    "e.l.f. Beauty": {
+      "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.05
+      "weight": 0.074
     },
     "Inter Parfums": {
       "ticker": "IPAR",
@@ -36,42 +36,42 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.1535
+      "weight": 0.1271
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.3168
+      "weight": 0.2999
     },
-    "Abbvie": {
-      "ticker": "ABBV",
+    "Eli Lilly": {
+      "ticker": "LLY",
       "sector": "Healthcare",
-      "weight": 0.1013
-    },
-    "Apple": {
-      "ticker": "AAPL",
-      "sector": "Tech",
-      "weight": 0.0521
+      "weight": 0.0883
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.1264
+      "weight": 0.0902
+    },
+    "Nvidia": {
+      "ticker": "NVDA",
+      "sector": "Tech",
+      "weight": 0.1205
     }
   },
-  "ann_return": 0.8453,
-  "ann_risk": 0.1644,
-  "sharpe": 4.8375,
+  "ann_return": 1.0357,
+  "ann_risk": 0.1604,
+  "sharpe": 6.1451,
   "spy": {
-    "total_return": 0.1731,
-    "annualized_ret": 0.5414,
+    "total_return": 0.2267,
+    "annualized_ret": 0.761,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1478,
-    "sharpe": 3.325
+    "annualized_vol": 0.1419,
+    "sharpe": 5.009
   },
   "paper_trading": {
-    "portfolio_value": 10539.14,
-    "spy_value": 10292.2
+    "portfolio_value": 10706.07,
+    "spy_value": 10545.8
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -93,7 +93,7 @@
     "JNJ": "bullish",
     "LLY": "neutral",
     "PFE": "bullish",
-    "ABBV": "bullish",
+    "ABBV": "neutral",
     "AAPL": "bullish",
     "MSFT": "bullish",
     "NVDA": "bullish",
