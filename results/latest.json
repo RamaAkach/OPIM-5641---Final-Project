@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-08-11",
+  "run_date": "2026-08-12",
   "mode": "max_sharpe",
-  "vix": 15.46,
+  "vix": 15.28,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -21,7 +21,7 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.0653
+      "weight": 0.0691
     },
     "Inter Parfums": {
       "ticker": "IPAR",
@@ -36,46 +36,46 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.1039
+      "weight": 0.0975
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.2961
+      "weight": 0.2937
     },
     "Eli Lilly": {
       "ticker": "LLY",
       "sector": "Healthcare",
-      "weight": 0.1202
+      "weight": 0.1186
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.1066
+      "weight": 0.1094
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.108
+      "weight": 0.1117
     }
   },
-  "ann_return": 1.0212,
-  "ann_risk": 0.1594,
-  "sharpe": 6.0915,
+  "ann_return": 0.9831,
+  "ann_risk": 0.1603,
+  "sharpe": 5.8224,
   "spy": {
-    "total_return": 0.2264,
-    "annualized_ret": 0.7488,
+    "total_return": 0.2224,
+    "annualized_ret": 0.7233,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1412,
-    "sharpe": 4.948
+    "annualized_vol": 0.1407,
+    "sharpe": 4.784
   },
   "paper_trading": {
-    "portfolio_value": 10661.44,
-    "spy_value": 10542.66
+    "portfolio_value": NaN,
+    "spy_value": 10508.97
   },
   "golden_cross": {
-    "LVMUY": "neutral",
-    "RL": "bullish",
+    "LVMUY": "bullish",
+    "RL": "neutral",
     "TPR": "bullish",
     "NKE": "neutral",
     "LULU": "bullish",
@@ -88,13 +88,13 @@
     "WMG": "neutral",
     "SPOT": "bullish",
     "IHRT": "bearish",
-    "SIRI": "bullish",
+    "SIRI": "neutral",
     "UNH": "neutral",
     "JNJ": "bullish",
     "LLY": "neutral",
     "PFE": "bullish",
     "ABBV": "neutral",
-    "AAPL": "bullish",
+    "AAPL": "neutral",
     "MSFT": "bullish",
     "NVDA": "bullish",
     "META": "bearish",
