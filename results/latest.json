@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-08-12",
+  "run_date": "2026-08-13",
   "mode": "max_sharpe",
-  "vix": 15.28,
+  "vix": 14.55,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -21,7 +21,7 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.0691
+      "weight": 0.0628
     },
     "Inter Parfums": {
       "ticker": "IPAR",
@@ -36,46 +36,46 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.0975
+      "weight": 0.0981
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.2937
+      "weight": 0.2948
     },
     "Eli Lilly": {
       "ticker": "LLY",
       "sector": "Healthcare",
-      "weight": 0.1186
+      "weight": 0.1207
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.1094
+      "weight": 0.0926
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.1117
+      "weight": 0.131
     }
   },
-  "ann_return": 0.9831,
-  "ann_risk": 0.1603,
-  "sharpe": 5.8224,
+  "ann_return": 0.8882,
+  "ann_risk": 0.1525,
+  "sharpe": 5.4978,
   "spy": {
-    "total_return": 0.2224,
-    "annualized_ret": 0.7233,
+    "total_return": 0.1909,
+    "annualized_ret": 0.6054,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1407,
-    "sharpe": 4.784
+    "annualized_vol": 0.1334,
+    "sharpe": 4.164
   },
   "paper_trading": {
     "portfolio_value": NaN,
-    "spy_value": 10508.97
+    "spy_value": 10520.09
   },
   "golden_cross": {
     "LVMUY": "bullish",
-    "RL": "neutral",
+    "RL": "bullish",
     "TPR": "bullish",
     "NKE": "neutral",
     "LULU": "bullish",
@@ -85,12 +85,12 @@
     "COTY": "bullish",
     "IPAR": "bullish",
     "LYV": "bullish",
-    "WMG": "neutral",
+    "WMG": "bearish",
     "SPOT": "bullish",
     "IHRT": "bearish",
     "SIRI": "neutral",
     "UNH": "neutral",
-    "JNJ": "bullish",
+    "JNJ": "neutral",
     "LLY": "neutral",
     "PFE": "bullish",
     "ABBV": "neutral",
