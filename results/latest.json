@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-08-14",
+  "run_date": "2026-08-17",
   "mode": "max_sharpe",
-  "vix": 14.63,
+  "vix": 14.25,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -23,8 +23,8 @@
       "sector": "Beauty",
       "weight": 0.05
     },
-    "Coty": {
-      "ticker": "COTY",
+    "Inter Parfums": {
+      "ticker": "IPAR",
       "sector": "Beauty",
       "weight": 0.05
     },
@@ -36,42 +36,42 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.1003
+      "weight": 0.1053
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.2508
+      "weight": 0.217
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.1716
+      "weight": 0.1984
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.0961
+      "weight": 0.0987
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.1311
+      "weight": 0.1307
     }
   },
-  "ann_return": 0.7638,
-  "ann_risk": 0.142,
-  "sharpe": 5.0249,
+  "ann_return": 0.7351,
+  "ann_risk": 0.1381,
+  "sharpe": 4.9599,
   "spy": {
-    "total_return": 0.1902,
-    "annualized_ret": 0.603,
+    "total_return": 0.1812,
+    "annualized_ret": 0.5781,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1333,
-    "sharpe": 4.148
+    "annualized_vol": 0.1341,
+    "sharpe": 3.938
   },
   "paper_trading": {
     "portfolio_value": NaN,
-    "spy_value": 10670.65
+    "spy_value": 10395.97
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -83,7 +83,7 @@
     "ULTA": "bullish",
     "ELF": "bullish",
     "COTY": "bullish",
-    "IPAR": "bullish",
+    "IPAR": "neutral",
     "LYV": "bullish",
     "WMG": "bearish",
     "SPOT": "bullish",
