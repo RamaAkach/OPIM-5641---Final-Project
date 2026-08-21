@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-08-20",
+  "run_date": "2026-08-21",
   "mode": "max_sharpe",
-  "vix": 14.89,
+  "vix": 16.01,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -18,15 +18,15 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Estee Lauder": {
-      "ticker": "EL",
-      "sector": "Beauty",
-      "weight": 0.05
-    },
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.0755
+      "weight": 0.0704
+    },
+    "Inter Parfums": {
+      "ticker": "IPAR",
+      "sector": "Beauty",
+      "weight": 0.05
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -36,54 +36,54 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.0758
+      "weight": 0.1034
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.1387
+      "weight": 0.1212
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
       "weight": 0.2714
     },
-    "Apple": {
-      "ticker": "AAPL",
+    "Microsoft": {
+      "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.0821
+      "weight": 0.0981
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.1565
+      "weight": 0.1355
     }
   },
-  "ann_return": 0.7033,
-  "ann_risk": 0.139,
-  "sharpe": 4.6993,
+  "ann_return": 0.6268,
+  "ann_risk": 0.135,
+  "sharpe": 4.2735,
   "spy": {
-    "total_return": 0.1696,
-    "annualized_ret": 0.522,
+    "total_return": 0.131,
+    "annualized_ret": 0.391,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1338,
-    "sharpe": 3.528
+    "annualized_vol": 0.1289,
+    "sharpe": 2.646
   },
   "paper_trading": {
-    "portfolio_value": NaN,
-    "spy_value": 10312.43
+    "portfolio_value": 10054.7,
+    "spy_value": 10239.26
   },
   "golden_cross": {
     "LVMUY": "neutral",
     "RL": "bullish",
-    "TPR": "bullish",
-    "NKE": "neutral",
+    "TPR": "neutral",
+    "NKE": "bearish",
     "LULU": "bullish",
     "EL": "bullish",
     "ULTA": "bullish",
     "ELF": "bullish",
     "COTY": "bullish",
-    "IPAR": "neutral",
+    "IPAR": "bearish",
     "LYV": "bullish",
     "WMG": "bearish",
     "SPOT": "bullish",
@@ -93,7 +93,7 @@
     "JNJ": "bullish",
     "LLY": "bullish",
     "PFE": "bullish",
-    "ABBV": "neutral",
+    "ABBV": "bullish",
     "AAPL": "bearish",
     "MSFT": "bullish",
     "NVDA": "bullish",
