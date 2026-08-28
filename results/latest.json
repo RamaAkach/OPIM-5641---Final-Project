@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-08-27",
+  "run_date": "2026-08-28",
   "mode": "max_sharpe",
-  "vix": 15.21,
+  "vix": 14.51,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -26,7 +26,7 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.0682
+      "weight": 0.0865
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -36,42 +36,42 @@
     "SiriusXM": {
       "ticker": "SIRI",
       "sector": "Music",
-      "weight": 0.1095
+      "weight": 0.0777
     },
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.1649
+      "weight": 0.1822
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.2709
+      "weight": 0.2552
     },
-    "Microsoft": {
-      "ticker": "MSFT",
+    "Apple": {
+      "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.1119
+      "weight": 0.0544
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0746
+      "weight": 0.1441
     }
   },
-  "ann_return": 0.6216,
-  "ann_risk": 0.14,
-  "sharpe": 4.0823,
+  "ann_return": 0.5956,
+  "ann_risk": 0.1411,
+  "sharpe": 3.8682,
   "spy": {
-    "total_return": 0.106,
-    "annualized_ret": 0.31,
+    "total_return": 0.1045,
+    "annualized_ret": 0.3053,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1269,
-    "sharpe": 2.049
+    "annualized_vol": 0.1267,
+    "sharpe": 2.015
   },
   "paper_trading": {
-    "portfolio_value": 10321.25,
-    "spy_value": 10191.16
+    "portfolio_value": 10261.11,
+    "spy_value": 10213.92
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -88,7 +88,7 @@
     "WMG": "bullish",
     "SPOT": "bullish",
     "IHRT": "bearish",
-    "SIRI": "bearish",
+    "SIRI": "neutral",
     "UNH": "bearish",
     "JNJ": "bullish",
     "LLY": "bullish",
