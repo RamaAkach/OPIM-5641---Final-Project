@@ -26,7 +26,7 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.1224
+      "weight": 0.1243
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -41,27 +41,27 @@
     "UnitedHealth": {
       "ticker": "UNH",
       "sector": "Healthcare",
-      "weight": 0.1332
+      "weight": 0.131
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3095
+      "weight": 0.3117
     },
     "Apple": {
       "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.0595
+      "weight": 0.0544
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.1254
+      "weight": 0.1285
     }
   },
-  "ann_return": 0.5874,
-  "ann_risk": 0.1531,
-  "sharpe": 3.5108,
+  "ann_return": 0.5888,
+  "ann_risk": 0.1529,
+  "sharpe": 3.525,
   "spy": {
     "total_return": 0.0851,
     "annualized_ret": 0.2477,
@@ -70,7 +70,7 @@
     "sharpe": 1.566
   },
   "paper_trading": {
-    "portfolio_value": 10350.53,
+    "portfolio_value": NaN,
     "spy_value": 10162.16
   },
   "golden_cross": {

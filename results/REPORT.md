@@ -10,11 +10,11 @@
 
 | Stock | Ticker | Sector | Weight | Binary Y |
 |-------|--------|--------|--------|----------|
-| Abbvie | `ABBV` | Healthcare | **30.95%** | ✅ 1 |
-| UnitedHealth | `UNH` | Healthcare | **13.32%** | ✅ 1 |
-| Nvidia | `NVDA` | Tech | **12.54%** | ✅ 1 |
-| e.l.f. Beauty | `ELF` | Beauty | **12.24%** | ✅ 1 |
-| Apple | `AAPL` | Tech | **5.95%** | ✅ 1 |
+| Abbvie | `ABBV` | Healthcare | **31.17%** | ✅ 1 |
+| UnitedHealth | `UNH` | Healthcare | **13.10%** | ✅ 1 |
+| Nvidia | `NVDA` | Tech | **12.85%** | ✅ 1 |
+| e.l.f. Beauty | `ELF` | Beauty | **12.43%** | ✅ 1 |
+| Apple | `AAPL` | Tech | **5.44%** | ✅ 1 |
 | LVMH | `LVMUY` | Fashion | **5.00%** | ✅ 1 |
 | Ralph Lauren | `RL` | Fashion | **5.00%** | ✅ 1 |
 | Estee Lauder | `EL` | Beauty | **5.00%** | ✅ 1 |
@@ -30,9 +30,9 @@
 
 | Metric | Our Portfolio | S&P 500 (SPY) |
 |--------|--------------|---------------|
-| Annualised Return | **58.74%** | 24.77% |
-| Annualised Risk   | 15.31% | 12.62% |
-| Sharpe Ratio      | **3.511** | 1.566 |
+| Annualised Return | **58.88%** | 24.77% |
+| Annualised Risk   | 15.29% | 12.62% |
+| Sharpe Ratio      | **3.525** | 1.566 |
 | Max Drawdown      | — | -4.49% |
 
 ---
@@ -41,9 +41,9 @@
 
 | Portfolio Value | SPY Value |
 |----------------|-----------|
-| **$10,350.53** | $10,162.16 |
+| **$nan** | $10,162.16 |
 
-Return vs Buy-and-Hold SPY: **3.51%** vs 1.62%
+Return vs Buy-and-Hold SPY: **nan%** vs 1.62%
 
 ---
 
