@@ -1,9 +1,9 @@
 {
-  "run_date": "2026-09-10",
+  "run_date": "2026-09-11",
   "mode": "max_sharpe",
-  "vix": 16.46,
+  "vix": 17.84,
   "window_days": 60,
-  "n_stocks_selected": 10,
+  "n_stocks_selected": 9,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
@@ -18,19 +18,14 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Estee Lauder": {
-      "ticker": "EL",
-      "sector": "Beauty",
-      "weight": 0.05
-    },
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.1267
+      "weight": 0.1182
     },
-    "Spotify": {
-      "ticker": "SPOT",
-      "sector": "Music",
+    "Inter Parfums": {
+      "ticker": "IPAR",
+      "sector": "Beauty",
       "weight": 0.05
     },
     "SiriusXM": {
@@ -41,37 +36,37 @@
     "Eli Lilly": {
       "ticker": "LLY",
       "sector": "Healthcare",
-      "weight": 0.0693
+      "weight": 0.1406
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.362
+      "weight": 0.2854
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.0895
+      "weight": 0.1177
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.1025
+      "weight": 0.088
     }
   },
-  "ann_return": 0.6242,
-  "ann_risk": 0.1714,
-  "sharpe": 3.3496,
+  "ann_return": 0.5815,
+  "ann_risk": 0.1599,
+  "sharpe": 3.3239,
   "spy": {
-    "total_return": 0.074,
-    "annualized_ret": 0.2135,
+    "total_return": 0.0677,
+    "annualized_ret": 0.1944,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1264,
-    "sharpe": 1.293
+    "annualized_vol": 0.1269,
+    "sharpe": 1.138
   },
   "paper_trading": {
-    "portfolio_value": 9990.77,
-    "spy_value": 10328.1
+    "portfolio_value": 9738.84,
+    "spy_value": 10255.78
   },
   "golden_cross": {
     "LVMUY": "bearish",
