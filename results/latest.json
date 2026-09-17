@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-09-16",
+  "run_date": "2026-09-17",
   "mode": "max_sharpe",
-  "vix": 17.2,
+  "vix": 17.71,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -21,7 +21,7 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.126
+      "weight": 0.1328
     },
     "Inter Parfums": {
       "ticker": "IPAR",
@@ -31,7 +31,7 @@
     "Spotify": {
       "ticker": "SPOT",
       "sector": "Music",
-      "weight": 0.05
+      "weight": 0.0576
     },
     "SiriusXM": {
       "ticker": "SIRI",
@@ -41,37 +41,37 @@
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.0955
+      "weight": 0.05
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3159
+      "weight": 0.3676
     },
     "Apple": {
       "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.0871
+      "weight": 0.05
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.1255
+      "weight": 0.142
     }
   },
-  "ann_return": 0.5976,
-  "ann_risk": 0.1597,
-  "sharpe": 3.4285,
+  "ann_return": 0.6252,
+  "ann_risk": 0.1629,
+  "sharpe": 3.5315,
   "spy": {
-    "total_return": 0.0576,
-    "annualized_ret": 0.1638,
+    "total_return": 0.0445,
+    "annualized_ret": 0.1253,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1269,
-    "sharpe": 0.896
+    "annualized_vol": 0.1266,
+    "sharpe": 0.595
   },
   "paper_trading": {
-    "portfolio_value": 9665.69,
-    "spy_value": 10382.89
+    "portfolio_value": 9757.94,
+    "spy_value": 10166.65
   },
   "golden_cross": {
     "LVMUY": "bearish",
