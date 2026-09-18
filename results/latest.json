@@ -1,27 +1,27 @@
 {
-  "run_date": "2026-09-17",
+  "run_date": "2026-09-18",
   "mode": "max_sharpe",
-  "vix": 17.71,
+  "vix": 15.44,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
   "allocation": {
-    "LVMH": {
-      "ticker": "LVMUY",
+    "Ralph Lauren": {
+      "ticker": "RL",
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Ralph Lauren": {
-      "ticker": "RL",
+    "Nike": {
+      "ticker": "NKE",
       "sector": "Fashion",
       "weight": 0.05
     },
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.1328
+      "weight": 0.131
     },
     "Inter Parfums": {
       "ticker": "IPAR",
@@ -31,7 +31,7 @@
     "Spotify": {
       "ticker": "SPOT",
       "sector": "Music",
-      "weight": 0.0576
+      "weight": 0.05
     },
     "SiriusXM": {
       "ticker": "SIRI",
@@ -41,12 +41,12 @@
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.05
+      "weight": 0.0537
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3676
+      "weight": 0.3852
     },
     "Apple": {
       "ticker": "AAPL",
@@ -56,22 +56,22 @@
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.142
+      "weight": 0.1301
     }
   },
-  "ann_return": 0.6252,
-  "ann_risk": 0.1629,
-  "sharpe": 3.5315,
+  "ann_return": 0.5838,
+  "ann_risk": 0.1614,
+  "sharpe": 3.3066,
   "spy": {
-    "total_return": 0.0445,
-    "annualized_ret": 0.1253,
+    "total_return": 0.0419,
+    "annualized_ret": 0.1176,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1266,
-    "sharpe": 0.595
+    "annualized_vol": 0.1259,
+    "sharpe": 0.537
   },
   "paper_trading": {
-    "portfolio_value": 9757.94,
-    "spy_value": 10166.65
+    "portfolio_value": 9943.63,
+    "spy_value": 10208.42
   },
   "golden_cross": {
     "LVMUY": "bearish",
@@ -81,7 +81,7 @@
     "LULU": "bearish",
     "EL": "bullish",
     "ULTA": "bullish",
-    "ELF": "bullish",
+    "ELF": "neutral",
     "COTY": "neutral",
     "IPAR": "neutral",
     "LYV": "bearish",
