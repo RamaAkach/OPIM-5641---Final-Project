@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-09-22",
+  "run_date": "2026-09-23",
   "mode": "max_sharpe",
   "vix": 14.87,
   "window_days": 60,
@@ -21,7 +21,7 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.1635
+      "weight": 0.1638
     },
     "Inter Parfums": {
       "ticker": "IPAR",
@@ -41,37 +41,37 @@
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.0854
+      "weight": 0.0842
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3371
+      "weight": 0.3386
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.0811
+      "weight": 0.075
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0829
+      "weight": 0.0885
     }
   },
-  "ann_return": 0.7295,
-  "ann_risk": 0.1662,
-  "sharpe": 4.0889,
+  "ann_return": 0.7198,
+  "ann_risk": 0.1649,
+  "sharpe": 4.0619,
   "spy": {
-    "total_return": 0.0516,
-    "annualized_ret": 0.1476,
+    "total_return": 0.0514,
+    "annualized_ret": 0.1455,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1283,
-    "sharpe": 0.761
+    "annualized_vol": 0.1276,
+    "sharpe": 0.748
   },
   "paper_trading": {
-    "portfolio_value": 9928.81,
-    "spy_value": 10073.15
+    "portfolio_value": NaN,
+    "spy_value": 10071.58
   },
   "golden_cross": {
     "LVMUY": "bearish",
@@ -98,6 +98,6 @@
     "MSFT": "bullish",
     "NVDA": "neutral",
     "META": "bullish",
-    "GOOGL": "neutral"
+    "GOOGL": "bullish"
   }
 }
