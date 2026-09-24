@@ -1,27 +1,27 @@
 {
-  "run_date": "2026-09-23",
+  "run_date": "2026-09-24",
   "mode": "max_sharpe",
-  "vix": 14.87,
+  "vix": 15.18,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
   "allocation": {
-    "LVMH": {
-      "ticker": "LVMUY",
+    "Ralph Lauren": {
+      "ticker": "RL",
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Ralph Lauren": {
-      "ticker": "RL",
+    "Nike": {
+      "ticker": "NKE",
       "sector": "Fashion",
       "weight": 0.05
     },
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.1638
+      "weight": 0.1827
     },
     "Inter Parfums": {
       "ticker": "IPAR",
@@ -41,37 +41,37 @@
     "Johnson & J": {
       "ticker": "JNJ",
       "sector": "Healthcare",
-      "weight": 0.0842
+      "weight": 0.0805
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3386
+      "weight": 0.328
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.075
+      "weight": 0.0889
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0885
+      "weight": 0.0699
     }
   },
-  "ann_return": 0.7198,
-  "ann_risk": 0.1649,
-  "sharpe": 4.0619,
+  "ann_return": 0.7331,
+  "ann_risk": 0.1711,
+  "sharpe": 3.9918,
   "spy": {
-    "total_return": 0.0514,
-    "annualized_ret": 0.1455,
+    "total_return": 0.0454,
+    "annualized_ret": 0.1279,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1276,
-    "sharpe": 0.748
+    "annualized_vol": 0.1282,
+    "sharpe": 0.608
   },
   "paper_trading": {
     "portfolio_value": NaN,
-    "spy_value": 10071.58
+    "spy_value": 10015.05
   },
   "golden_cross": {
     "LVMUY": "bearish",
@@ -79,18 +79,18 @@
     "TPR": "bearish",
     "NKE": "bearish",
     "LULU": "bearish",
-    "EL": "bullish",
+    "EL": "neutral",
     "ULTA": "bullish",
-    "ELF": "neutral",
+    "ELF": "bearish",
     "COTY": "bearish",
     "IPAR": "neutral",
     "LYV": "bearish",
     "WMG": "bullish",
-    "SPOT": "bullish",
+    "SPOT": "neutral",
     "IHRT": "bearish",
     "SIRI": "neutral",
     "UNH": "neutral",
-    "JNJ": "bullish",
+    "JNJ": "neutral",
     "LLY": "bearish",
     "PFE": "neutral",
     "ABBV": "bullish",
