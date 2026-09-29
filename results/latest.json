@@ -1,27 +1,27 @@
 {
-  "run_date": "2026-09-25",
+  "run_date": "2026-09-29",
   "mode": "max_sharpe",
-  "vix": 15.67,
+  "vix": 16.07,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
   "allocation": {
-    "Ralph Lauren": {
-      "ticker": "RL",
+    "LVMH": {
+      "ticker": "LVMUY",
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Nike": {
-      "ticker": "NKE",
+    "Ralph Lauren": {
+      "ticker": "RL",
       "sector": "Fashion",
       "weight": 0.05
     },
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.196
+      "weight": 0.193
     },
     "Inter Parfums": {
       "ticker": "IPAR",
@@ -46,42 +46,42 @@
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3408
+      "weight": 0.3444
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.0955
+      "weight": 0.0968
     },
     "Meta": {
       "ticker": "META",
       "sector": "Tech",
-      "weight": 0.0677
+      "weight": 0.0658
     }
   },
-  "ann_return": 0.8146,
-  "ann_risk": 0.1855,
-  "sharpe": 4.1215,
+  "ann_return": 0.7933,
+  "ann_risk": 0.1846,
+  "sharpe": 4.0267,
   "spy": {
-    "total_return": 0.0387,
-    "annualized_ret": 0.1085,
+    "total_return": 0.0496,
+    "annualized_ret": 0.1433,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1279,
-    "sharpe": 0.457
+    "annualized_vol": 0.1272,
+    "sharpe": 0.734
   },
   "paper_trading": {
-    "portfolio_value": 9830.92,
-    "spy_value": 9946.01
+    "portfolio_value": NaN,
+    "spy_value": NaN
   },
   "golden_cross": {
     "LVMUY": "bearish",
-    "RL": "bearish",
+    "RL": "neutral",
     "TPR": "bearish",
     "NKE": "bearish",
     "LULU": "bearish",
     "EL": "neutral",
     "ULTA": "bullish",
-    "ELF": "bearish",
+    "ELF": "neutral",
     "COTY": "bearish",
     "IPAR": "neutral",
     "LYV": "bearish",
@@ -90,7 +90,7 @@
     "IHRT": "bearish",
     "SIRI": "neutral",
     "UNH": "neutral",
-    "JNJ": "neutral",
+    "JNJ": "bullish",
     "LLY": "neutral",
     "PFE": "neutral",
     "ABBV": "bullish",
