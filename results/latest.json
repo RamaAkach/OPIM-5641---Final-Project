@@ -18,15 +18,15 @@
       "sector": "Fashion",
       "weight": 0.05
     },
+    "Ulta Beauty": {
+      "ticker": "ULTA",
+      "sector": "Beauty",
+      "weight": 0.05
+    },
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.193
-    },
-    "Inter Parfums": {
-      "ticker": "IPAR",
-      "sector": "Beauty",
-      "weight": 0.05
+      "weight": 0.2159
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -46,32 +46,32 @@
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3444
+      "weight": 0.3495
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.0968
+      "weight": 0.0646
     },
-    "Meta": {
-      "ticker": "META",
+    "Nvidia": {
+      "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0658
+      "weight": 0.07
     }
   },
-  "ann_return": 0.7933,
-  "ann_risk": 0.1846,
-  "sharpe": 4.0267,
+  "ann_return": 0.775,
+  "ann_risk": 0.1812,
+  "sharpe": 4.0003,
   "spy": {
-    "total_return": 0.0496,
-    "annualized_ret": 0.1433,
+    "total_return": 0.0417,
+    "annualized_ret": 0.1186,
     "max_drawdown": -0.0449,
     "annualized_vol": 0.1272,
-    "sharpe": 0.734
+    "sharpe": 0.539
   },
   "paper_trading": {
-    "portfolio_value": NaN,
-    "spy_value": NaN
+    "portfolio_value": 9938.9,
+    "spy_value": 9935.55
   },
   "golden_cross": {
     "LVMUY": "bearish",
@@ -83,12 +83,12 @@
     "ULTA": "bullish",
     "ELF": "neutral",
     "COTY": "bearish",
-    "IPAR": "neutral",
+    "IPAR": "bullish",
     "LYV": "bearish",
-    "WMG": "bullish",
+    "WMG": "neutral",
     "SPOT": "neutral",
     "IHRT": "bearish",
-    "SIRI": "neutral",
+    "SIRI": "bearish",
     "UNH": "neutral",
     "JNJ": "bullish",
     "LLY": "neutral",

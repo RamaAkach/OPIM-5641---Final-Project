@@ -10,19 +10,19 @@
 
 | Stock | Ticker | Sector | Weight | Binary Y |
 |-------|--------|--------|--------|----------|
-| Abbvie | `ABBV` | Healthcare | **34.44%** | ✅ 1 |
-| e.l.f. Beauty | `ELF` | Beauty | **19.30%** | ✅ 1 |
-| Microsoft | `MSFT` | Tech | **9.68%** | ✅ 1 |
-| Meta | `META` | Tech | **6.58%** | ✅ 1 |
+| Abbvie | `ABBV` | Healthcare | **34.95%** | ✅ 1 |
+| e.l.f. Beauty | `ELF` | Beauty | **21.59%** | ✅ 1 |
+| Nvidia | `NVDA` | Tech | **7.00%** | ✅ 1 |
+| Microsoft | `MSFT` | Tech | **6.46%** | ✅ 1 |
 | LVMH | `LVMUY` | Fashion | **5.00%** | ✅ 1 |
 | Ralph Lauren | `RL` | Fashion | **5.00%** | ✅ 1 |
-| Inter Parfums | `IPAR` | Beauty | **5.00%** | ✅ 1 |
+| Ulta Beauty | `ULTA` | Beauty | **5.00%** | ✅ 1 |
 | Live Nation | `LYV` | Music | **5.00%** | ✅ 1 |
 | Spotify | `SPOT` | Music | **5.00%** | ✅ 1 |
 | Johnson & J | `JNJ` | Healthcare | **5.00%** | ✅ 1 |
 
 **Stocks excluded (Y=0, X=0):**
-`TPR`, `NKE`, `LULU`, `EL`, `ULTA`, `COTY`, `WMG`, `IHRT`, `SIRI`, `UNH`, `LLY`, `PFE`, `AAPL`, `NVDA`, `GOOGL`
+`TPR`, `NKE`, `LULU`, `EL`, `COTY`, `IPAR`, `WMG`, `IHRT`, `SIRI`, `UNH`, `LLY`, `PFE`, `AAPL`, `META`, `GOOGL`
 
 ---
 
@@ -30,9 +30,9 @@
 
 | Metric | Our Portfolio | S&P 500 (SPY) |
 |--------|--------------|---------------|
-| Annualised Return | **79.33%** | 14.33% |
-| Annualised Risk   | 18.46% | 12.72% |
-| Sharpe Ratio      | **4.027** | 0.734 |
+| Annualised Return | **77.50%** | 11.86% |
+| Annualised Risk   | 18.12% | 12.72% |
+| Sharpe Ratio      | **4.000** | 0.539 |
 | Max Drawdown      | — | -4.49% |
 
 ---
@@ -41,9 +41,9 @@
 
 | Portfolio Value | SPY Value |
 |----------------|-----------|
-| **$nan** | $nan |
+| **$9,938.90** | $9,935.55 |
 
-Return vs Buy-and-Hold SPY: **nan%** vs nan%
+Return vs Buy-and-Hold SPY: **-0.61%** vs -0.64%
 
 ---
 
@@ -64,12 +64,12 @@ Return vs Buy-and-Hold SPY: **nan%** vs nan%
 | `ULTA` | 🟢 Bullish |
 | `ELF` | ⚪ Neutral |
 | `COTY` | 🔴 Bearish |
-| `IPAR` | ⚪ Neutral |
+| `IPAR` | 🟢 Bullish |
 | `LYV` | 🔴 Bearish |
-| `WMG` | 🟢 Bullish |
+| `WMG` | ⚪ Neutral |
 | `SPOT` | ⚪ Neutral |
 | `IHRT` | 🔴 Bearish |
-| `SIRI` | ⚪ Neutral |
+| `SIRI` | 🔴 Bearish |
 | `UNH` | ⚪ Neutral |
 | `JNJ` | 🟢 Bullish |
 | `LLY` | ⚪ Neutral |
