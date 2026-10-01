@@ -1,20 +1,20 @@
 {
-  "run_date": "2026-09-29",
+  "run_date": "2026-10-01",
   "mode": "max_sharpe",
-  "vix": 16.07,
+  "vix": 16.34,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
   "allocation": {
-    "LVMH": {
-      "ticker": "LVMUY",
+    "Ralph Lauren": {
+      "ticker": "RL",
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Ralph Lauren": {
-      "ticker": "RL",
+    "Tapestry": {
+      "ticker": "TPR",
       "sector": "Fashion",
       "weight": 0.05
     },
@@ -26,7 +26,7 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.2159
+      "weight": 0.2529
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -46,32 +46,32 @@
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3495
+      "weight": 0.298
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.0646
+      "weight": 0.0872
     },
-    "Nvidia": {
-      "ticker": "NVDA",
+    "Meta": {
+      "ticker": "META",
       "sector": "Tech",
-      "weight": 0.07
+      "weight": 0.0618
     }
   },
-  "ann_return": 0.775,
-  "ann_risk": 0.1812,
-  "sharpe": 4.0003,
+  "ann_return": 0.8486,
+  "ann_risk": 0.2017,
+  "sharpe": 3.96,
   "spy": {
-    "total_return": 0.0417,
-    "annualized_ret": 0.1186,
+    "total_return": 0.0468,
+    "annualized_ret": 0.1335,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1272,
-    "sharpe": 0.539
+    "annualized_vol": 0.1267,
+    "sharpe": 0.659
   },
   "paper_trading": {
-    "portfolio_value": 9938.9,
-    "spy_value": 9935.55
+    "portfolio_value": NaN,
+    "spy_value": NaN
   },
   "golden_cross": {
     "LVMUY": "bearish",
@@ -84,15 +84,15 @@
     "ELF": "neutral",
     "COTY": "bearish",
     "IPAR": "bullish",
-    "LYV": "bearish",
+    "LYV": "neutral",
     "WMG": "neutral",
-    "SPOT": "neutral",
+    "SPOT": "bearish",
     "IHRT": "bearish",
     "SIRI": "bearish",
     "UNH": "neutral",
     "JNJ": "bullish",
     "LLY": "neutral",
-    "PFE": "neutral",
+    "PFE": "bullish",
     "ABBV": "bullish",
     "AAPL": "bullish",
     "MSFT": "bullish",
