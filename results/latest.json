@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-10-08",
+  "run_date": "2026-10-09",
   "mode": "max_sharpe",
-  "vix": 15.08,
+  "vix": 15.41,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -18,23 +18,23 @@
       "sector": "Fashion",
       "weight": 0.05
     },
+    "Ulta Beauty": {
+      "ticker": "ULTA",
+      "sector": "Beauty",
+      "weight": 0.05
+    },
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.2076
-    },
-    "Inter Parfums": {
-      "ticker": "IPAR",
-      "sector": "Beauty",
-      "weight": 0.05
+      "weight": 0.2098
     },
     "Live Nation": {
       "ticker": "LYV",
       "sector": "Music",
       "weight": 0.05
     },
-    "SiriusXM": {
-      "ticker": "SIRI",
+    "Spotify": {
+      "ticker": "SPOT",
       "sector": "Music",
       "weight": 0.05
     },
@@ -46,28 +46,28 @@
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.297
+      "weight": 0.3027
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.1016
+      "weight": 0.0888
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0938
+      "weight": 0.0987
     }
   },
-  "ann_return": 0.7147,
-  "ann_risk": 0.1713,
-  "sharpe": 3.8804,
+  "ann_return": 0.6968,
+  "ann_risk": 0.1708,
+  "sharpe": 3.7858,
   "spy": {
-    "total_return": 0.0432,
-    "annualized_ret": 0.1215,
+    "total_return": 0.0409,
+    "annualized_ret": 0.1148,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1257,
-    "sharpe": 0.569
+    "annualized_vol": 0.1258,
+    "sharpe": 0.515
   },
   "paper_trading": {
     "portfolio_value": NaN,
