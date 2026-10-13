@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-10-10",
+  "run_date": "2026-10-13",
   "mode": "max_sharpe",
-  "vix": 14.84,
+  "vix": 15.21,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -26,7 +26,7 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.245
+      "weight": 0.2476
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -46,32 +46,32 @@
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3097
-    },
-    "Microsoft": {
-      "ticker": "MSFT",
-      "sector": "Tech",
-      "weight": 0.068
+      "weight": 0.3433
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0773
+      "weight": 0.05
+    },
+    "Meta": {
+      "ticker": "META",
+      "sector": "Tech",
+      "weight": 0.0591
     }
   },
-  "ann_return": 0.7233,
-  "ann_risk": 0.1826,
-  "sharpe": 3.6867,
+  "ann_return": 0.8906,
+  "ann_risk": 0.1838,
+  "sharpe": 4.5726,
   "spy": {
-    "total_return": 0.0308,
-    "annualized_ret": 0.0857,
+    "total_return": 0.031,
+    "annualized_ret": 0.0862,
     "max_drawdown": -0.0449,
-    "annualized_vol": 0.1258,
-    "sharpe": 0.284
+    "annualized_vol": 0.126,
+    "sharpe": 0.287
   },
   "paper_trading": {
-    "portfolio_value": NaN,
-    "spy_value": NaN
+    "portfolio_value": 9856.21,
+    "spy_value": 10184.38
   },
   "golden_cross": {
     "LVMUY": "bearish",
@@ -79,10 +79,10 @@
     "TPR": "neutral",
     "NKE": "bearish",
     "LULU": "bearish",
-    "EL": "bearish",
+    "EL": "neutral",
     "ULTA": "bullish",
     "ELF": "bullish",
-    "COTY": "neutral",
+    "COTY": "bullish",
     "IPAR": "neutral",
     "LYV": "neutral",
     "WMG": "neutral",
@@ -92,7 +92,7 @@
     "UNH": "neutral",
     "JNJ": "neutral",
     "LLY": "bullish",
-    "PFE": "bullish",
+    "PFE": "neutral",
     "ABBV": "bullish",
     "AAPL": "bullish",
     "MSFT": "bullish",
