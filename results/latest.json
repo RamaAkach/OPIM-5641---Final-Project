@@ -1,20 +1,20 @@
 {
-  "run_date": "2026-10-22",
+  "run_date": "2026-10-23",
   "mode": "max_sharpe",
-  "vix": 16.68,
+  "vix": 19.03,
   "window_days": 60,
-  "n_stocks_selected": 9,
+  "n_stocks_selected": 10,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
   "allocation": {
-    "Ralph Lauren": {
-      "ticker": "RL",
+    "LVMH": {
+      "ticker": "LVMUY",
       "sector": "Fashion",
       "weight": 0.05
     },
-    "Nike": {
-      "ticker": "NKE",
+    "Ralph Lauren": {
+      "ticker": "RL",
       "sector": "Fashion",
       "weight": 0.05
     },
@@ -26,10 +26,15 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.2327
+      "weight": 0.2422
     },
     "Live Nation": {
       "ticker": "LYV",
+      "sector": "Music",
+      "weight": 0.05
+    },
+    "Spotify": {
+      "ticker": "SPOT",
       "sector": "Music",
       "weight": 0.05
     },
@@ -41,35 +46,35 @@
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.3011
+      "weight": 0.3023
     },
-    "Microsoft": {
-      "ticker": "MSFT",
+    "Apple": {
+      "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.0916
+      "weight": 0.05
     },
     "Nvidia": {
       "ticker": "NVDA",
       "sector": "Tech",
-      "weight": 0.0747
+      "weight": 0.1054
     }
   },
-  "ann_return": 0.836,
-  "ann_risk": 0.1726,
-  "sharpe": 4.5528,
+  "ann_return": 0.8181,
+  "ann_risk": 0.1759,
+  "sharpe": 4.3677,
   "spy": {
-    "total_return": 0.0542,
-    "annualized_ret": 0.152,
+    "total_return": 0.0584,
+    "annualized_ret": 0.1645,
     "max_drawdown": -0.0338,
-    "annualized_vol": 0.1202,
-    "sharpe": 0.849
+    "annualized_vol": 0.1189,
+    "sharpe": 0.963
   },
   "paper_trading": {
-    "portfolio_value": 9943.98,
-    "spy_value": 10128.73
+    "portfolio_value": 9916.73,
+    "spy_value": 9905.42
   },
   "golden_cross": {
-    "LVMUY": "bearish",
+    "LVMUY": "neutral",
     "RL": "bullish",
     "TPR": "bullish",
     "NKE": "bullish",
@@ -92,7 +97,7 @@
     "AAPL": "bullish",
     "MSFT": "bullish",
     "NVDA": "neutral",
-    "META": "bullish",
-    "GOOGL": "bullish"
+    "META": "neutral",
+    "GOOGL": "neutral"
   }
 }
