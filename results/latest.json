@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-11-03",
+  "run_date": "2026-11-04",
   "mode": "max_sharpe",
-  "vix": 21.15,
+  "vix": 20.83,
   "window_days": 60,
   "n_stocks_selected": 9,
   "n_stocks_pool": 25,
@@ -16,12 +16,12 @@
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.1742
+      "weight": 0.1942
     },
     "Coty": {
       "ticker": "COTY",
       "sector": "Beauty",
-      "weight": 0.0802
+      "weight": 0.05
     },
     "Live Nation": {
       "ticker": "LYV",
@@ -33,20 +33,20 @@
       "sector": "Music",
       "weight": 0.05
     },
-    "Pfizer": {
-      "ticker": "PFE",
+    "Eli Lilly": {
+      "ticker": "LLY",
       "sector": "Healthcare",
       "weight": 0.05
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.2836
+      "weight": 0.2587
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.162
+      "weight": 0.1972
     },
     "Nvidia": {
       "ticker": "NVDA",
@@ -54,19 +54,19 @@
       "weight": 0.05
     }
   },
-  "ann_return": 0.838,
-  "ann_risk": 0.1747,
-  "sharpe": 4.511,
+  "ann_return": 0.8378,
+  "ann_risk": 0.1751,
+  "sharpe": 4.4991,
   "spy": {
-    "total_return": 0.0129,
-    "annualized_ret": 0.0349,
+    "total_return": 0.0159,
+    "annualized_ret": 0.0427,
     "max_drawdown": -0.0346,
-    "annualized_vol": 0.1138,
-    "sharpe": -0.133
+    "annualized_vol": 0.1133,
+    "sharpe": -0.064
   },
   "paper_trading": {
-    "portfolio_value": 10260.95,
-    "spy_value": 9954.81
+    "portfolio_value": 10202.86,
+    "spy_value": 9984.59
   },
   "golden_cross": {
     "LVMUY": "neutral",
