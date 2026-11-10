@@ -1,27 +1,27 @@
 {
-  "run_date": "2026-11-07",
+  "run_date": "2026-11-10",
   "mode": "max_sharpe",
-  "vix": 25.64,
+  "vix": 19.92,
   "window_days": 60,
   "n_stocks_selected": 9,
   "n_stocks_pool": 25,
   "min_weight": 0.05,
   "max_weight": 0.4,
   "allocation": {
-    "Ralph Lauren": {
-      "ticker": "RL",
+    "Tapestry": {
+      "ticker": "TPR",
       "sector": "Fashion",
       "weight": 0.05
     },
     "e.l.f. Beauty": {
       "ticker": "ELF",
       "sector": "Beauty",
-      "weight": 0.0946
+      "weight": 0.0992
     },
     "Coty": {
       "ticker": "COTY",
       "sector": "Beauty",
-      "weight": 0.2109
+      "weight": 0.1928
     },
     "Spotify": {
       "ticker": "SPOT",
@@ -36,37 +36,37 @@
     "Pfizer": {
       "ticker": "PFE",
       "sector": "Healthcare",
-      "weight": 0.1904
+      "weight": 0.1653
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
       "weight": 0.05
     },
+    "Apple": {
+      "ticker": "AAPL",
+      "sector": "Tech",
+      "weight": 0.05
+    },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.2042
-    },
-    "Nvidia": {
-      "ticker": "NVDA",
-      "sector": "Tech",
-      "weight": 0.05
+      "weight": 0.2426
     }
   },
-  "ann_return": 1.0775,
-  "ann_risk": 0.2067,
-  "sharpe": 4.9701,
+  "ann_return": 1.0745,
+  "ann_risk": 0.2117,
+  "sharpe": 4.8382,
   "spy": {
-    "total_return": 0.0038,
-    "annualized_ret": 0.0102,
+    "total_return": 0.0183,
+    "annualized_ret": 0.0498,
     "max_drawdown": -0.0592,
-    "annualized_vol": 0.1353,
-    "sharpe": -0.294
+    "annualized_vol": 0.1383,
+    "sharpe": -0.001
   },
   "paper_trading": {
-    "portfolio_value": 10215.7,
-    "spy_value": 9653.4
+    "portfolio_value": 10327.88,
+    "spy_value": 9732.47
   },
   "golden_cross": {
     "LVMUY": "bullish",
