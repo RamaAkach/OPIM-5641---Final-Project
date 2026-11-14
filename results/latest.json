@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-11-12",
+  "run_date": "2026-11-14",
   "mode": "max_sharpe",
-  "vix": 17.49,
+  "vix": 19.3,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -21,12 +21,12 @@
     "Ulta Beauty": {
       "ticker": "ULTA",
       "sector": "Beauty",
-      "weight": 0.1152
+      "weight": 0.1662
     },
     "Coty": {
       "ticker": "COTY",
       "sector": "Beauty",
-      "weight": 0.1953
+      "weight": 0.1858
     },
     "Warner Music": {
       "ticker": "WMG",
@@ -38,36 +38,36 @@
       "sector": "Music",
       "weight": 0.05
     },
+    "Eli Lilly": {
+      "ticker": "LLY",
+      "sector": "Healthcare",
+      "weight": 0.05
+    },
     "Pfizer": {
       "ticker": "PFE",
       "sector": "Healthcare",
-      "weight": 0.188
+      "weight": 0.1438
     },
-    "Abbvie": {
-      "ticker": "ABBV",
-      "sector": "Healthcare",
+    "Apple": {
+      "ticker": "AAPL",
+      "sector": "Tech",
       "weight": 0.05
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.2015
-    },
-    "Meta": {
-      "ticker": "META",
-      "sector": "Tech",
-      "weight": 0.05
+      "weight": 0.2042
     }
   },
-  "ann_return": 0.9598,
-  "ann_risk": 0.2062,
-  "sharpe": 4.4116,
+  "ann_return": 0.8171,
+  "ann_risk": 0.2128,
+  "sharpe": 3.6053,
   "spy": {
-    "total_return": 0.0067,
-    "annualized_ret": 0.0181,
+    "total_return": 0.0191,
+    "annualized_ret": 0.052,
     "max_drawdown": -0.0592,
-    "annualized_vol": 0.1379,
-    "sharpe": -0.231
+    "annualized_vol": 0.1397,
+    "sharpe": 0.014
   },
   "paper_trading": {
     "portfolio_value": NaN,
@@ -95,7 +95,7 @@
     "PFE": "bullish",
     "ABBV": "bullish",
     "AAPL": "bullish",
-    "MSFT": "bullish",
+    "MSFT": "neutral",
     "NVDA": "bearish",
     "META": "bearish",
     "GOOGL": "bearish"
