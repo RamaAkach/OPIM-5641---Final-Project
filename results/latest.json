@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-11-20",
-  "mode": "min_variance",
-  "vix": 28.44,
+  "run_date": "2026-11-21",
+  "mode": "max_sharpe",
+  "vix": 0.0,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -18,15 +18,15 @@
       "sector": "Fashion",
       "weight": 0.05
     },
-    "e.l.f. Beauty": {
-      "ticker": "ELF",
+    "Ulta Beauty": {
+      "ticker": "ULTA",
       "sector": "Beauty",
-      "weight": 0.05
+      "weight": 0.1367
     },
     "Coty": {
       "ticker": "COTY",
       "sector": "Beauty",
-      "weight": 0.05
+      "weight": 0.3072
     },
     "Warner Music": {
       "ticker": "WMG",
@@ -41,40 +41,40 @@
     "Pfizer": {
       "ticker": "PFE",
       "sector": "Healthcare",
-      "weight": 0.2299
+      "weight": 0.05
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.2441
+      "weight": 0.05
     },
     "Apple": {
       "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.0976
+      "weight": 0.05
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.1284
+      "weight": 0.206
     }
   },
-  "ann_return": 0.5646,
-  "ann_risk": 0.1649,
-  "sharpe": 3.1219,
+  "ann_return": 0.9439,
+  "ann_risk": 0.2542,
+  "sharpe": 3.5171,
   "spy": {
-    "total_return": -0.018,
-    "annualized_ret": -0.0469,
-    "max_drawdown": -0.0628,
-    "annualized_vol": 0.1426,
-    "sharpe": -0.68
+    "total_return": -0.0453,
+    "annualized_ret": -0.1157,
+    "max_drawdown": -0.0811,
+    "annualized_vol": 0.1454,
+    "sharpe": -1.14
   },
   "paper_trading": {
     "portfolio_value": NaN,
     "spy_value": NaN
   },
   "golden_cross": {
-    "LVMUY": "bullish",
+    "LVMUY": "neutral",
     "RL": "bullish",
     "TPR": "bullish",
     "NKE": "bullish",
