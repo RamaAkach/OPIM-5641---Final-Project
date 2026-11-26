@@ -1,7 +1,7 @@
 {
-  "run_date": "2026-11-25",
-  "mode": "max_sharpe",
-  "vix": 26.36,
+  "run_date": "2026-11-26",
+  "mode": "min_variance",
+  "vix": 28.29,
   "window_days": 60,
   "n_stocks_selected": 10,
   "n_stocks_pool": 25,
@@ -26,7 +26,7 @@
     "Coty": {
       "ticker": "COTY",
       "sector": "Beauty",
-      "weight": 0.2377
+      "weight": 0.05
     },
     "Warner Music": {
       "ticker": "WMG",
@@ -41,37 +41,37 @@
     "Pfizer": {
       "ticker": "PFE",
       "sector": "Healthcare",
-      "weight": 0.05
+      "weight": 0.21
     },
     "Abbvie": {
       "ticker": "ABBV",
       "sector": "Healthcare",
-      "weight": 0.252
+      "weight": 0.2481
     },
     "Apple": {
       "ticker": "AAPL",
       "sector": "Tech",
-      "weight": 0.05
+      "weight": 0.119
     },
     "Microsoft": {
       "ticker": "MSFT",
       "sector": "Tech",
-      "weight": 0.1603
+      "weight": 0.123
     }
   },
-  "ann_return": 0.8491,
-  "ann_risk": 0.2234,
-  "sharpe": 3.5764,
+  "ann_return": 0.6093,
+  "ann_risk": 0.174,
+  "sharpe": 3.2151,
   "spy": {
-    "total_return": -0.0382,
-    "annualized_ret": -0.0971,
+    "total_return": -0.0444,
+    "annualized_ret": -0.1123,
     "max_drawdown": -0.1146,
     "annualized_vol": 0.174,
-    "sharpe": -0.845
+    "sharpe": -0.933
   },
   "paper_trading": {
-    "portfolio_value": 10381.5,
-    "spy_value": 9276.62
+    "portfolio_value": 10357.65,
+    "spy_value": 9199.19
   },
   "golden_cross": {
     "LVMUY": "neutral",
@@ -95,7 +95,7 @@
     "PFE": "neutral",
     "ABBV": "bullish",
     "AAPL": "bullish",
-    "MSFT": "neutral",
+    "MSFT": "bearish",
     "NVDA": "bearish",
     "META": "bearish",
     "GOOGL": "bearish"
